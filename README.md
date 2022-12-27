@@ -1,2 +1,2 @@
 # Spring-2023
-This is course repo for CS3520 (Programming in C++) - Fall 2022 @ Northeastern University!
+This is course repo for CS3520 (Programming in C++) - Spring 2023 @ Northeastern University!
