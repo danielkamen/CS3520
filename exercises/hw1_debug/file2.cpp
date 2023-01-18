@@ -12,6 +12,10 @@ Output :
 617-424-9999
 */
 
+// Check for possible compiler errors, logical errors and rectify them
+// Re-factor the code by adding few comments (make it readable) and
+// provide list of most important fixes (in comments)
+
 #include<iostream>
   
 int main(){

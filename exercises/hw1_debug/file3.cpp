@@ -3,8 +3,9 @@
     If 'num' is 0 or 1, print "num is not prime or composite"
     For any value > 1, print "num is a prime number" or "num is a composite number" depending on the number */
 
-// Check for possible logical errors and rectify them 
-
+// Check for possible compiler errors, logical errors and rectify them
+// Re-factor the code by adding few comments (make it readable) and
+// provide list of most important fixes (in comments)
 
 #include<iosteam>
 

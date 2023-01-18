@@ -6,6 +6,10 @@
     Z X V T R P N L J H F D B
 */
 
+// Check for possible compiler errors, logical errors and rectify them
+// Re-factor the code by adding few comments (make it readable) and
+// provide list of most important fixes (in comments)
+
 #include <iostream>
 
 int main(){
