@@ -22,7 +22,7 @@ int main(){
    char digit1, digit2, digit3, digit4;
    int areaCode, exchange;
    std::cout<< "Hello, I am a telemarketing calling making program.\n";
-   std::cout<< Enter a three-digit area code ";
+   std::cout<< "Enter a three-digit area code "; // added a quotation before enter to close the string
    cin<<exchange;
    std::cout<<"Enter a three-digit exchange to call "
    std::cin>>areaCode;
