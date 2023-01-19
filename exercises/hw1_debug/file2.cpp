@@ -17,6 +17,8 @@ Output :
 // provide list of most important fixes (in comments)
 
 #include<iostream>
+using namespace std; // added this line to include std
+
   
 int main(){
    char digit1, digit2, digit3, digit4;
