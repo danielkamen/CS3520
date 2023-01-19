@@ -7,7 +7,7 @@
 // Re-factor the code by adding few comments (make it readable) and
 // provide list of most important fixes (in comments)
 
-#include<iosteam>
+#include <iosteam>
 
 int main(void){
     int num,i;
