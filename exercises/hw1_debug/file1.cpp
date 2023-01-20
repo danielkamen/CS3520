@@ -10,25 +10,45 @@
 // Re-factor the code by adding few comments (make it readable) and
 // provide list of most important fixes (in comments)
 
+/**
+ * added namespace std; at the top
+ * 
+ * List of all changes from top of code to bottom:
+ * Changed starting product values to 1 so you dont get stuck multiplying by 0. Sum in initialized to start at 0. Initialized limit and products as ints.
+ * 
+ * added int in front of i and changed colons to semicolons since this inst a while loop. Loop also starts at 1 since multiplying by 0 ruins the even_prod
+ * 
+ * changed how i is even or odd by using modulo and ==. then the product is multiplied by i. 
+ * 
+ * removed \n and a sneaky closed paren at the cout<<"The sum" line.
+ * 
+ * started the alphabet at z and worked down, which meant flipping  <= to >=. Defined a new char, ch, to represent the uppercase version of c. changed i to c to make sense and flipped the spacing order to start with a letter and not a space.
+*/
+
 #include <iostream>
+using namespace std; // added this to include std
 
 int main(){
-    int limit = 0, even_product = 0, odd_product = 0, sum;
+    int limit = 10, even_product = 1, odd_product = 1, sum = 0; // changed starting product values to 1 so u dont get stuck multiplying by 0. made sum initialized at 0
     char c;
+
     cout<<"The value of limit is "<< limit<<endl;
-    for(i = 0: i <= limit: ++i){ 
-       if(i / 2 = 0){
-           even_product = i;
+    for(int i = 1; i <= limit; ++i){  // added int in front of i and changed the colons to semicolons. not a while loop. started at 1 and not 0
+       if(i % 2 == 0){ // changed it to modulo and ==, faulty logic constructors
+           even_product = even_product * i; // changed this to multiply the current i by even product
        }   
-        if(i ** 2 == 1){
-           odd_product += i;
+        if(i % 2 == 1){ // changed ** to modulo
+           odd_product = odd_product * i; // changed this to multiply the current i by odd product
        }
         sum = even_product + odd_product;
     }
-    cout<<"The Sum = \n"<< "%d", sum);
-    for(c = 'a'; c <= 'z'; c-2){
-    	cout<<" "<< i;
+    cout<<"The Sum = "<< sum << endl;; // removed close-paren. remvoed \n. remvoed "%d"
+ 
+    for(c = 'z'; c >= 'a'; c= c - 2){ // starting char is at z, and goes to a. This also required flipped <= to >=
+    char ch = toupper(c);
+    	cout<< ch << " "; // changed i to c. flipped order so it starts with letter and not space.
     }
     
     return 0;
 }
+
