@@ -42,7 +42,7 @@ int main(){
        }
         sum = even_product + odd_product;
     }
-    cout<<"The Sum = "<< sum << endl;; // removed close-paren. remvoed \n. remvoed "%d"
+    cout<<"The Sum = "<< sum << endl; // removed close-paren. remvoed \n. remvoed "%d"
  
     for(c = 'z'; c >= 'a'; c= c - 2){ // starting char is at z, and goes to a. This also required flipped <= to >=
     char ch = toupper(c);
