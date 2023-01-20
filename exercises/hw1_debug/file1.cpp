@@ -33,7 +33,7 @@ int main(){
     char c;
 
     cout<<"The value of limit is "<< limit<<endl;
-    for(int i = 1; i <= limit; ++i){  // added int in front of i and changed the colons to semicolons. not a while loop. started at 1 and not 0
+    for(int i = 1; i <= limit; i++){  // added int in front of i and changed the colons to semicolons. not a while loop. started at 1 and not 0
        if(i % 2 == 0){ // changed it to modulo and ==, faulty logic constructors
            even_product = even_product * i; // changed this to multiply the current i by even product
        }   

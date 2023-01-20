@@ -33,10 +33,10 @@ int main(){
    cin>>exchange;
    cout<<"Enter a three-digit exchange to call ";
    cin>>areaCode;
-   for(digit1 = 0; digit1 < 10; ++digit1){ // added semicolons. increment variable is digit1.
-        for(digit2 = 0; digit2 < 10; ++digit2){ // changed parameters to match logic in the above. line added semicolons. increment variable is digit2
-             for(digit3 = 0; digit3 < 10; ++digit3) {
-                    for(digit4 = 0; digit4 < 10; ++digit4) { // added a counted for-loop for the 4th digit, the ones places
+   for(digit1 = 0; digit1 < 10; digit1++){ // added semicolons. increment variable is digit1.
+        for(digit2 = 0; digit2 < 10; digit2++){ // changed parameters to match logic in the above. line added semicolons. increment variable is digit2
+             for(digit3 = 0; digit3 < 10; digit3++) {
+                    for(digit4 = 0; digit4 < 10; digit4++) { // added a counted for-loop for the 4th digit, the ones places
                      cout<< "Dialing ("<< areaCode<<") "<< exchange<<" - ";
                      cout<< digit1;
                      cout<<digit2;
