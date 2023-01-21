@@ -1,5 +1,10 @@
-// Fig. 5.6: fig05_06.cpp
-// Compound interest calculations with for.
+
+
+// THEY GOT SCAMMED!!!!!!!!
+
+
+
+
 #include <iostream>
 #include <iomanip>
 #include <cmath> // standard math library
