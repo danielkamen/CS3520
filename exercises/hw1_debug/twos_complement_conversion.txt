@@ -1,0 +1,27 @@
+Problem 5:
+
+Assume that your computer uses 12-bits registers to represent numbers. If your computer can, what would be its 2’s complement binary representation for:
+
+-13:
+13 represeted not in 2s comp: 000000001101
+                flip bits:  : 111111110010
+                add 1:      : 111111110011  -------- answer
+
+
+56:
+56 represetned not in 2s comp: 000000111000 -----------answer 
+
+
+-1: not as 2s comp:            000000000001 
+                    flip bits: 111111111110
+                    add 1      111111111111 ----------- answer
+
+
+-2048: not as 2s comp ........ 100000000000
+                        flip : 011111111111
+                        add 1: 100000000000 ----------- answer
+
+
+2048: Not able to. The limit for 12 bits is -2048-> 2047... 2^(12-1)-1
+
+
