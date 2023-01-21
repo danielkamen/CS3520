@@ -31,5 +31,6 @@ int main(void){
         cout<<num<<" is a prime number\n";
     }
     }
+    return 0;
 
 }

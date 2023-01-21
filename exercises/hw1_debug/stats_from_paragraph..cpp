@@ -114,4 +114,5 @@ int main(){
             cout<<tempWord<< endl;
         }
     }
+    return 0;
 }

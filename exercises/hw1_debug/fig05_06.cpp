@@ -35,6 +35,7 @@ int main()
       // display the year and the amount
       cout << setw( 4 ) << rate<< "%" << setw( 25 ) << amount << endl;
    } // end for 
+   return 0;
 } // end main
 
 
