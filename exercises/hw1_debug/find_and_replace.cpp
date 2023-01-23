@@ -13,8 +13,11 @@ int main() {
     int count = 0;
     int position = 0;
     vector<int> posOfWords(0);
+    vector<int> wordsVec(0);
+    vector<int> posOfSpace(0);
+    posOfSpace.push_back(0);
 
-
+    // section dealing with user input
     cout << "Please enter a paragraph. Press [Enter] when you are done." << endl;
     getline(cin, paragraph);
     if (paragraph.empty()) {
@@ -22,6 +25,7 @@ int main() {
     }
     int lenParagraph = paragraph.size();
 
+    // section dealing with user input for finding a word
     cout << "Please type a word you want to find: ";
     cin >> goalWord;
     if (goalWord.size() < 2) {
@@ -29,8 +33,8 @@ int main() {
     }
     int wordLength = goalWord.size();
 
-    vector<int> posOfSpace(0);
-    posOfSpace.push_back(0);
+    
+    // makes a vector of position of spaces
     for (int i = 0; i <= lenParagraph; i++) {
         if (paragraph[i] == ' ') {
             posOfSpace.push_back(i);
@@ -38,23 +42,21 @@ int main() {
     }
     posOfSpace.push_back(lenParagraph);
 
-
-    for (int i = 0; i < posOfSpace.size() - 1; i++) {
-        if (i == 0) {
-            string tempWord = paragraph.substr(0, (posOfSpace.at(1)));
-            if (tempWord == goalWord) {
-                count++;
-                cout << "Position of the word: " << 0 << endl;
-                posOfWords.push_back(posOfSpace.at(i));
+    // makes a vector of the words
+        for (int i = 0; i < posOfSpace.size() - 1; i++) {
+            if (i == 0) {
+                wordsVec.push_back(paragraph.substr(0, (posOfSpace.at(i + 1))));
+                
+            }
+            else {
+            wordsVec.push_back(paragraph.substr(posOfSpace.at(i) + 1, (posOfSpace.at(i + 1) - posOfSpace.at(i) - 1)));
             }
         }
-        else {
-            string tempWord = paragraph.substr(posOfSpace.at(i) + 1, (posOfSpace.at(i + 1) - (posOfSpace.at(i) + 1)));
-            if (tempWord == goalWord) {
+
+    for (int i = 0; i < wordsVec.size(); i++) {
+            if (wordsVec[i] == goalWord) {
                 count++;
                 cout << "Position of the word: " << posOfSpace.at(i) + 1 << endl;
-                posOfWords.push_back(posOfSpace.at(i) + 1);
-            }
         }
     }
     cout << "Total number of times the word was found: " << count << endl;
