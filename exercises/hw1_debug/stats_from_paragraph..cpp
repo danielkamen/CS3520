@@ -35,7 +35,7 @@ int main() {
      //  ! . , ; “ ‘ ? $ 
     vector<int> posOfSpace;
     posOfSpace.push_back(0);
-    for (int i = 0; i <= lenParagraph; i++) {
+    for (int i = 1; i <= lenParagraph; i++) {
         if (paragraph[i] == ' ') {
             posOfSpace.push_back(i);
         }
@@ -132,11 +132,18 @@ int main() {
     }
 
     srand((unsigned)time(NULL));
-    int randomNum = 6 + rand() % 5;
-    cout << "Generating a random number from 6-10 which will download a virus onto your computer: " << randomNum << endl;
+    int randomNum = 8;
+    cout << "Generating a random number from 6-10, and return any word less than: " << randomNum << endl;
     for (int i = 0; i < wordsVec.size(); i++) {
-        if (wordsVec[i].size() < randomNum) {
-            cout << wordsVec[i] << endl;
+        if (i == 0) {
+            if (wordsVec[i].size() < lengthUser) {
+                cout << wordsVec[i] << endl;
+            }
+        }
+        else {
+            if (wordsVec[i].size() < lengthUser) {
+                cout << wordsVec[i] << endl;
+            }
         }
     }
     return 0;
