@@ -1,0 +1,113 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    int std_id;
+    string std_name;
+    static char std_grade;
+    void print(); // declare name of function in class. define it outside of it
+    //void print(int);
+
+public:
+    int get_id() { return std_id; }
+};
+
+// can also have a function that has header:
+// void Student::print(int){...}
+void Student::print() {
+    cout << std_name << "has id" << std_id << "with grade"<< std_grade<< endl;
+}
+
+
+char Student::std_grade = 'A';
+
+int main() {
+    // numbers and number conversions
+    // Number system
+    // decimal: base 10 0,1,...9. important numbers at 10^x
+    // Binrary: base 2. 0 or 1. important numbers at 2^x
+    // 539 = 5*10^2+3*10^1 + 9*10^0
+    // 10110 to decimal-> 1*2^4+0+1*2^2+1*2^1 = 22
+    // 43 to binary:  32+8+2+1 =2^5+2^3+2^1+2*0
+    //                          101011
+
+    //hexnumbers: base 16 0-9,A,B,C,D,E,F
+    // A15=  1*A^2+1+5*16^0 = 2581
+    // Octal: base 8 -> 0->7. 8^x
+    //7 10 11 .. 17 20
+    // 317(8) = 3*8^2+1*8^1 +7*8^0=207
+
+    // Bin      Decimal     Hex     Octoal
+    // 0000     0           0           0
+    // 0001     1           1           1
+    // 0010     2           2           2
+    // 0011     3           3           3
+    // 0100     4           4           4
+    // 0101     5           5           5
+    // 0110     6           6           6
+    // 0111     7           7           7
+    // 1000     8           8           10
+    // 1001     9           9           11
+    // 1010     10          A           12
+    // 1011     11          B           13
+    // 1100     12          C           14
+    // 1101     13          D           15
+    // 1110     14          E           16
+    // 1111     15          F           17
+
+
+    //KEYWORDS that allow keyboard to read input in -x- and print them:
+    // hex    .... 0xff -> 0 is a hex indicator
+    // dec
+    // oct
+    // bitset<#ofbit>variable(initalvalue); TO USE THIS INCLUDE HEADER FILE: #include <bitset>. chnages the value to an x-bit binary value
+    // boolalpha -- prints 0(false) and 1(true) as true and false
+        // cout<<boolalpha<<(10 && 0xff)<<endl; are 10 and 0xff non-0? tt and tt
+        // cout<<boolalpha<<(0xfa & oxff)<<endl;  =fa
+    //WHY ALL THIS:
+        /*foundation of computer arcitecute and how operations are read
+          >> or << shifters in a 32 bit answer
+            9*11 = 9*8 +9*2+9*1
+                    9<<3 9<<1  9<<0
+    clock cycles    1       1   1  = total 3
+    addiion cycles      1       1
+        total cycles = 5
+        */
+
+
+
+
+
+
+
+    int i = 100;
+    cout << "addred:" << &i << "value" << i << endl; // 100
+    int& y = i; // reference variable -- alliase
+    cout << "addred:" << &y << "value" << y << endl; //100
+    y = 200;
+    cout << "addred:" << &i << "value" << i << endl; //200
+
+    int* ptr_i = &i;//pointer variables store memory addreses
+    cout << "addred:" << &ptr_i << "value" << ptr_i << endl; // address and value are the same
+    // going from pointer to variable is called dereferencing 
+    //access the value of variable pointer points to:dereference
+    cout << "value from pointer:" << *ptr_i << endl;
+
+    //why use poointers? doesn't itmake it more confusing and convoluted.
+
+    // to make it a class
+    // all members of class are default private
+
+
+
+
+    Student first; // instane of a struct type student
+    first.std_id = 100;
+    first.std_name = "d";
+    Student second{ 222, "kelly" };
+    //cout<<first.std_name<< "has id:"<< first.std_id <<endl;
+    first.print();
+    second.print();
+
+}
