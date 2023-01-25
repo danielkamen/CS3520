@@ -2,6 +2,8 @@
 #include <string>
 using namespace std;
 
+// People: David Cui && Daniel Kamen
+
 /**
  * Share your observations about the memory addresses of {static and non-static} member variables. Explain what you think they mean?
  * The memory addresses of the static member variables, after the 0x, are all 6 digits long.
