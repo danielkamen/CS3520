@@ -9,7 +9,7 @@ using namespace std;
  * The memory addresses of the static member variables, after the 0x, are all 6 digits long.
  * The memory addresses of the non-static member variables, after the 0x, are all 12 digits long. Double that of the static variables.
  * I think this means that since the static variables are defined once and stay the same after their decleration, they need less memory allocated to them. Whereas the non-static variables can be changed, so they need to store more data representing that, and to account for the change to require more memory.
- * 
+ *
 */
 class Student {
 private:
@@ -39,11 +39,9 @@ string Student::first_name = "bob";
 
 // print method that prints a students MEMBER VARIABLES memory addresses
 void Student::print() {
-    int* i = &id;
-    string* j = &first_name;
-    cout << "memory address for id: " << i << endl;
+    cout << "memory address for id: " << &id << endl;
     cout << "memory address for address: " << &address << endl;
-    cout << "memory address for first_name: " << j << endl;
+    cout << "memory address for first_name: " << &first_name << endl;
     cout << "memory address for last_name: " << &last_name << endl;
 };
 
