@@ -1,6 +1,7 @@
 {
-    "code-runner.fileDirectoryAsCwd": true,
-    "code-runner.runInTerminal": true,
-    "code-runner.saveAllFilesBeforeRun": true,
-    "code-runner.saveFileBeforeRun": true
+  "code-runner.fileDirectoryAsCwd": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveAllFilesBeforeRun": true,
+  "code-runner.saveFileBeforeRun": true,
+  "github-enterprise.uri": "https://github.khoury.northeastern.edu"
 }

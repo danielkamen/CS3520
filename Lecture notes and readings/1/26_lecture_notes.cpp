@@ -2,7 +2,6 @@
 input validation:
 input is what you expect it to be*/
 #include <bitset>
-#include <iomainp>
 #include <iostream>
 #include <limits>
 using namespace std;
