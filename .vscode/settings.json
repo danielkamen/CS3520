@@ -3,5 +3,8 @@
   "code-runner.runInTerminal": true,
   "code-runner.saveAllFilesBeforeRun": true,
   "code-runner.saveFileBeforeRun": true,
-  "github-enterprise.uri": "https://github.khoury.northeastern.edu"
+  "github-enterprise.uri": "https://github.khoury.northeastern.edu",
+  "files.associations": {
+    "iostream": "cpp"
+  }
 }
