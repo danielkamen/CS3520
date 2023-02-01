@@ -98,4 +98,3 @@ cout<<ptrd<<", "<<ptrd + 1<<endl;
 }
 
 
-

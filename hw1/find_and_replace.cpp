@@ -31,7 +31,7 @@ int main() {
     cout << "Please type a word you want to find: ";
     cin >> goalWord;
     if (goalWord.size() < 2) {
-        cout << "Error! Longer word is required.\n";\
+        cout << "Error! Longer word is required.\n";
     }
     int wordLength = goalWord.size();
 
@@ -75,7 +75,7 @@ int main() {
         paragraph.erase(posOfWords.at(i), wordLength);
         paragraph.insert(posOfWords.at(i), newWord);
         for (int j = 1; j < posOfWords.size(); j++) {
-            posOfWords[j] = posOfWordLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.s.at(j) + difInSizes;
+            posOfWords[j] = posOfWords.at(j) + difInSizes;
         }
     }
     cout << "Here is the new paragraph\n";
