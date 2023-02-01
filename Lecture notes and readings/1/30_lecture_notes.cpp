@@ -16,12 +16,27 @@ int main() {
 int arr[5] = {1,2,3,4,5};
 
 // dynamic allocation, new memory 
-int arr[ ] = {1,2,3,4,5, 66};
-for(int i = 0; i<=5; ++i)
+//int arr[ ] = {1,2,3,4,5, 66};
+for(int i = 0; i<5; ++i)
     cout<<arr[i]<<" ";
     cout<<endl;
 
+/*
+    for(auto e:arr)  // advanced for-loop
+        cout<<e<<" ";
+    cout<<endl;
+*/
+
+// name of array, is the memeory address of the first element in the array
+cout<<arr << " "<< &arr<< " "<< &arr[0]<<endl<<&arr[1]<<" "<<&arr[4]<<" "<<&arr[5]<<endl;
+
+/*
+NO INDEX OUT OF BOUNDS
+if it goes over, it will return the value of next memory address
+
+*/
 
 }
+
 
 
