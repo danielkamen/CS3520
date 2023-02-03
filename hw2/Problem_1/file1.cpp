@@ -1,15 +1,16 @@
 #include "file1.hpp"
 
+using namespace std;
+
+
 namespace std1 {
     int diceRoll() {
-        std::default_random_engine generator;
-        std::uniform_int_distribution<int> distribution(1,6);
-        int roll = distribution(generator);
+        int roll = 1 + (rand() % 6);
         return roll; 
     }
 
     float asPercentage(float size, int frequency) {
-        float percentage = frequency / size;
+        float percentage = frequency / size * 100;
         return percentage;
     }
 

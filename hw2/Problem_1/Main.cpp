@@ -2,7 +2,6 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
-#include <random>
 
 #include "file1.cpp"
 
@@ -28,21 +27,21 @@ int twelveRoll = std1::frequency(rolls, 12);
 
 // gets the percentage of dice rolls
 float size = (float) rolls.size();
-float twoPer = std1::asPercentage(size, 2);
-float threePer = std1::asPercentage(size, 3);
-float fourPer = std1::asPercentage(size, 4);
-float fivePer = std1::asPercentage(size, 5);
-float sixPer = std1::asPercentage(size, 6);
-float sevenPer = std1::asPercentage(size, 7);
-float eightPer = std1::asPercentage(size, 8);
-float ninePer = std1::asPercentage(size, 9);
-float tenPer = std1::asPercentage(size, 10);
-float elevenPer = std1::asPercentage(size, 11);
-float twelvePer = std1::asPercentage(size, 12);
+float twoPer = std1::asPercentage(size, twoRoll);
+float threePer = std1::asPercentage(size, threeRoll);
+float fourPer = std1::asPercentage(size, fourRoll);
+float fivePer = std1::asPercentage(size, fiveRoll);
+float sixPer = std1::asPercentage(size, sixRoll);
+float sevenPer = std1::asPercentage(size, sevenRoll);
+float eightPer = std1::asPercentage(size, eightRoll);
+float ninePer = std1::asPercentage(size, nineRoll);
+float tenPer = std1::asPercentage(size, tenRoll);
+float elevenPer = std1::asPercentage(size, elevenRoll);
+float twelvePer = std1::asPercentage(size, twelveRoll);
 
 
-cout<<"-------------------------------------------"<<endl;
-cout<<"Tally of 2's  rolled: "<<twoRoll<<"     As percentage: "<<twoPer<<endl;
+cout<<"___________________________________________"<<endl;
+cout<<"Tally of 2's  rolled: "<<twoRoll<<"      As percentage: "<<twoPer<<endl;
 cout<<"Tally of 3's  rolled: "<<threeRoll<<"     As percentage: "<<threePer<<endl;
 cout<<"Tally of 4's  rolled: "<<fourRoll<<"     As percentage: "<<fourPer<<endl;
 cout<<"Tally of 5's  rolled: "<<fiveRoll<<"     As percentage: "<<fivePer<<endl;
@@ -50,13 +49,15 @@ cout<<"Tally of 6's  rolled: "<<sixRoll<<"     As percentage: "<<sixPer<<endl;
 cout<<"Tally of 7's  rolled: "<<sevenRoll<<"     As percentage: "<<sevenPer<<endl;
 cout<<"Tally of 8's  rolled: "<<eightRoll<<"     As percentage: "<<eightPer<<endl;
 cout<<"Tally of 9's  rolled: "<<nineRoll<<"     As percentage: "<<ninePer<<endl;
-cout<<"Tally of 10's  rolled: "<<tenRoll<<"     As percentage: "<<tenPer<<endl;
-cout<<"Tally of 11's  rolled: "<<elevenRoll<<"     As percentage: "<<elevenPer<<endl;
-cout<<"Tally of 12's  rolled: "<<twelveRoll<<"     As percentage: "<<twelvePer<<endl;
+cout<<"Tally of 10's rolled: "<<tenRoll<<"     As percentage: "<<tenPer<<endl;
+cout<<"Tally of 11's rolled: "<<elevenRoll<<"     As percentage: "<<elevenPer<<endl;
+cout<<"Tally of 12's rolled: "<<twelveRoll<<"      As percentage: "<<twelvePer<<endl;
 
 cout<<"__________________________________________"<<endl;
 
+cout<<endl;
 
+cout<<"The results are not resonable, because the tallys and percentages are the same each time the file is ran, meaning the results aren't random."<<endl;
 return 0;
 
 }
