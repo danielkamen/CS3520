@@ -6,6 +6,7 @@
   "github-enterprise.uri": "https://github.khoury.northeastern.edu",
   "files.associations": {
     "iostream": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "vector": "cpp"
   }
 }
