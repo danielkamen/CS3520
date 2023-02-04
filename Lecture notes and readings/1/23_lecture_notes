@@ -100,8 +100,6 @@ int main() {
     // all members of class are default private
 
 
-
-
     Student first; // instane of a struct type student
     first.std_id = 100;
     first.std_name = "d";

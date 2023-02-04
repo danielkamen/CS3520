@@ -7,6 +7,11 @@
   "files.associations": {
     "iostream": "cpp",
     "xstring": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "fstream": "cpp",
+    "utility": "cpp",
+    "xutility": "cpp",
+    "iosfwd": "cpp",
+    "string": "cpp"
   }
 }
