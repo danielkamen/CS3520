@@ -1,185 +1,223 @@
+Hello TA, please scroll to the bottom to see my response to the last two questions asked for this problem :)
+
+
 _______________________________________________________
-Sum of scam word points: 24
+Sum of scam word points: 6
+
+***********************************************************
+Percentage of words that are common in scam files: 2.27273%
+***********************************************************
+
 _______________________________________________________
 _______________________________________________________
 Summary of file: 
-Sus Word:                urgent
-Was found on this line: 
-urgent
-It was found: 3 times
-Its individual word score was: 9
-________________________________________________________
-Sus Word:                verification
+Sus Word:                      urgent
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                required
+
+Sus Word:                      verification
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                invoice
+
+Sus Word:                      required
 Was found on this line: 
-password password invoice
-It was found: 2 times
+Word wasn't found in file
+It was found:                  0 times
+Its individual word score was: 0
+________________________________________________________
+
+Sus Word:                      invoice
+Was found on this line: 
+We appreciate your business. Please find your invoice details below. Feel free to contact us if you have any questions.
+It was found:                  2 times
 Its individual word score was: 6
 ________________________________________________________
-Sus Word:                help
+
+Sus Word:                      help
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                suspicious
+
+Sus Word:                      suspicious
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                activity
+
+Sus Word:                      activity
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                important
+
+Sus Word:                      important
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                password
-Was found on this line: 
-password password invoice
-It was found: 3 times
-Its individual word score was: 9
-________________________________________________________
-Sus Word:                expire
+
+Sus Word:                      password
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                action
+
+Sus Word:                      expire
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                label
+
+Sus Word:                      action
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                post
+
+Sus Word:                      label
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                document
+
+Sus Word:                      post
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                postal
+
+Sus Word:                      document
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                calculations
+
+Sus Word:                      postal
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                copy
+
+Sus Word:                      calculations
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                statement
+
+Sus Word:                      copy
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                financial
+
+Sus Word:                      statement
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                notification
+
+Sus Word:                      financial
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                irs
+
+Sus Word:                      notification
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                delivery
+
+Sus Word:                      irs
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                ticket
+
+Sus Word:                      delivery
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                no
+
+Sus Word:                      ticket
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                ups
+
+Sus Word:                      no
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                usps
+
+Sus Word:                      ups
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                fedex
+
+Sus Word:                      usps
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                fraud
+
+Sus Word:                      fedex
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                fradulent
+
+Sus Word:                      fraud
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
-Sus Word:                wrong
+
+Sus Word:                      fradulent
 Was found on this line: 
 Word wasn't found in file
-It was found: 0 times
+It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
+
+Sus Word:                      wrong
+Was found on this line: 
+Word wasn't found in file
+It was found:                  0 times
+Its individual word score was: 0
+________________________________________________________
+

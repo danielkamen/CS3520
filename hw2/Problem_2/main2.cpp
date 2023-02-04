@@ -142,6 +142,12 @@ int main() {
         scamWords[i].timesFound = 0;
         scamWords[i].wordPointTotal = 0;
         scamWords[i].lineFirstFoundOn = "Word wasn't found in file";
+        // for loop that ensures every scam word is all lowercase
+        for (int j = 0; j < scamWords[i].word.length(); ++j) {
+            string word = scamWords[i].word;
+            word[j] = tolower(word[j]);
+        }
+
     }
 
     const string outfilePath = "output.txt";
@@ -166,14 +172,21 @@ int main() {
     buffers << in.rdbuf();
     string line;
 
+    // total number of words in file
+    float wordCount;
 
-    // loops through each word
+    // loops through each line
     while (getline(buffers, line)) {
         stringstream lineStream(line);
         string token;
+        // loops through each word/token
         while (lineStream >> token) {
             for (int i = 0; i < scamWords.size(); ++i) {
                 // if the sus word was found
+                for (int j = 0; j < token.length(); ++j) {
+                    token[j] = tolower(token[j]);
+                }
+                //ensures every word is checked as lowercase
                 if ((token) == (scamWords[i].word)) {
                     if (scamWords[i].timesFound == 0) {
                         scamWords[i].lineFirstFoundOn = line;
@@ -181,23 +194,40 @@ int main() {
                     scamWords[i].timesFound++;
                     scamWords[i].wordPointTotal = scamWords[i].value * scamWords[i].timesFound;
                 }
+
             }
+            wordCount++;
         }
     }
 
-    cout << "_______________________________________________________" << endl;
-    cout << "Sum of scam word points: " << std1::sumOfSusWords(scamWords) << endl;
+    cout << "Hello TA, please scroll to the bottom to see my response to the last two questions asked for this problem :)" << endl;
 
+    cout << endl;
+    cout << endl;
+    cout << "_______________________________________________________" << endl;
+    cout << "Sum of scam word points: " << std1::sumOfSusWordPoints(scamWords) << endl;
+    cout << endl;
+
+    cout << "***********************************************************" << endl;
+    float perScam = (std1::sumOfSusWords(scamWords) / wordCount) * 100;
+    cout << "Percentage of words that are common in scam files: " << perScam << "%" << endl;
+    cout << "***********************************************************" << endl;
+    cout << endl;
     cout << "_______________________________________________________" << endl;
     cout << "_______________________________________________________" << endl;
     cout << "Summary of file: " << endl;
     for (int i = 0; i < scamWords.size(); ++i) {
-        cout << "Sus Word:                " << scamWords[i].word << endl;
+        cout << "Sus Word:                      " << scamWords[i].word << endl;
         cout << "Was found on this line: " << endl;
         cout << scamWords[i].lineFirstFoundOn << endl;
-        cout << "It was found: " << scamWords[i].timesFound << " times" << endl;
+        cout << "It was found:                  " << scamWords[i].timesFound << " times" << endl;
         cout << "Its individual word score was: " << scamWords[i].wordPointTotal << endl;
         cout << "________________________________________________________" << endl;
+        cout << endl;
+    }
+
+    if (perScam > .05) {
+        cout << "This"
     }
 
 

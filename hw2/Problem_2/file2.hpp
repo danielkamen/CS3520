@@ -3,8 +3,8 @@
 #include <string>
 using namespace std;
 
- class ScamWord {
-    public:
+class ScamWord {
+public:
     string word;
     int value;
 
@@ -14,12 +14,14 @@ using namespace std;
     int wordPointTotal;
 
     string lineFirstFoundOn;
- };
+};
 
 
 namespace std1 {
 
-// collects the total sum of all the sus words in the file
-int sumOfSusWords(vector<ScamWord> words);
+    // collects the total sum of all the sus words in the file
+    int sumOfSusWordPoints(vector<ScamWord> words);
 
+    // collects the total number of sus words found in file
+    int sumOfSusWords(vector<ScamWord> words);
 }

@@ -1,9 +1,19 @@
-password password invoice
+We appreciate your business. Please find your invoice details below. Feel free to contact us if you have any questions.
 
-password Password invoice invoices
+Adam Johnson
+Paypal Product Manager
+(888) 973-3373
 
-urgent
+Have a great day!
 
-urgent
+Invoice to	Merchant ID 
+Terms	Due on receipt
+Product	$1,942.48
+Bose 7.1 Home Theater System
+1 X $1,942.48
+Balance due	$1,942.48
+Review and pay
+PP Sales Dept - WIC0193
+If you receive an email that seems fraudulent, please check with the business owner before paying.
 
-urgent
+© Intuit, Inc. All rights reserved.Privacy | Security | Terms of Service
