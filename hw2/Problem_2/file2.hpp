@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <String>
-
+#include <string>
 using namespace std;
 
  class ScamWord {
@@ -9,13 +8,13 @@ using namespace std;
     string word;
     int value;
     // A flag, if its 0 and scanFileScammer() finds this word, return the line. if > 0, dont return the line.
-    int firstLineFoundOn = 0;
+    int firstLineFoundOn;
     // how many times has this word been found?
-    int timesFound = 0;
+    int timesFound;
     // indivual word point total:
-    int wordPointTotal = 0;
+    int wordPointTotal;
 
-    string lineFirstFoundOn = "Word wasn't found in file";
+    string lineFirstFoundOn;
  };
 
 

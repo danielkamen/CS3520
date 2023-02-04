@@ -3,9 +3,8 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
+#include <string>
 #define EXIT_FAILURE -1
-
-#include "file2.cpp"
 
 using namespace std;
 
@@ -14,7 +13,8 @@ using namespace std;
 
 int main() {
 vector<ScamWord> scamWords;
-vector<string> linesFound;
+
+
 
     // makes 30 ScamWord class types, which store a word and an int value
 ScamWord f1;
@@ -139,6 +139,13 @@ f30.word = "wrong";
 f30.value = 1;
 scamWords.push_back(f30);
 
+// initalizes common values for every scamWord
+for (int i = 0; i < scamWords.size(); i++) {
+  scamWords[i].firstLineFoundOn = 0;
+scamWords[i].timesFound = 0;
+scamWords[i].wordPointTotal = 0;
+scamWords[i].lineFirstFoundOn = "Word wasn't found in file";
+}
 
   const string outfilePath = "output.txt";
   const string infilePath = "input.txt";
@@ -168,7 +175,7 @@ while (getline(buffers, line)) {
     string token;
     // Parse word by word
     while (lineStream >> token) {
-        std1::scanFileScammer(token, scamWords, line);
+        std1::scanFileScammer(token, scamWords, lineStream.str());
 }
 }
 

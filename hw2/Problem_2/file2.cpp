@@ -4,8 +4,7 @@
 #include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <String>
-
+#include <string>
 #include "file2.hpp"
 using namespace std;
 
@@ -38,8 +37,8 @@ int sumOfSusWords(vector<ScamWord> words) {
 }
 
 string outputOfText(vector<ScamWord> words) {
-    for(int i = 0; i< words.size(); i++){
-        cout<<"Sus Word: "<<words[i].word<<" was found on this line: "<<endl;
+    for(int i = 0; i < words.size(); i++){
+        cout<<"Sus Word:        "<< words[i].word<<"             was found on this line: "<<endl;
         cout<<words[i].lineFirstFoundOn<<endl;
         cout<<"It was found: "<<words[i].timesFound<<" times"<<endl;
         cout<<"Its individual word score was: "<<words[i].wordPointTotal<<endl;
