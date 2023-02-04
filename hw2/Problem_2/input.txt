@@ -1,6 +1,6 @@
 password password invoice
 
-password Password invoice
+password Password invoice invoices
 
 urgent
 

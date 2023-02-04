@@ -139,7 +139,6 @@ int main() {
 
     // initalizes common values for every scamWord
     for (int i = 0; i < scamWords.size(); i++) {
-        scamWords[i].firstLineFoundOn = 0;
         scamWords[i].timesFound = 0;
         scamWords[i].wordPointTotal = 0;
         scamWords[i].lineFirstFoundOn = "Word wasn't found in file";
@@ -161,19 +160,28 @@ int main() {
         cout << "Error" << endl;
         return EXIT_FAILURE;
     }
+    //line.beginLine.end
     // Read input stream into stringstream buffer
     stringstream buffers;
     buffers << in.rdbuf();
     string line;
 
 
-    // loops through each line, and scans it
+    // loops through each word
     while (getline(buffers, line)) {
         stringstream lineStream(line);
         string token;
-        // Parse word by word
         while (lineStream >> token) {
-            std1::scanFileScammer(token, scamWords, lineStream.str());
+            for (int i = 0; i < scamWords.size(); ++i) {
+                // if the sus word was found
+                if ((token) == (scamWords[i].word)) {
+                    if (scamWords[i].timesFound == 0) {
+                        scamWords[i].lineFirstFoundOn = line;
+                    }
+                    scamWords[i].timesFound++;
+                    scamWords[i].wordPointTotal = scamWords[i].value * scamWords[i].timesFound;
+                }
+            }
         }
     }
 
@@ -181,8 +189,17 @@ int main() {
     cout << "Sum of scam word points: " << std1::sumOfSusWords(scamWords) << endl;
 
     cout << "_______________________________________________________" << endl;
-    cout << "Summary of file: " << std1::outputOfText(scamWords) << endl;
+    cout << "_______________________________________________________" << endl;
+    cout << "Summary of file: " << endl;
+    for (int i = 0; i < scamWords.size(); ++i) {
+        cout << "Sus Word:                " << scamWords[i].word << endl;
+        cout << "Was found on this line: " << endl;
+        cout << scamWords[i].lineFirstFoundOn << endl;
+        cout << "It was found: " << scamWords[i].timesFound << " times" << endl;
+        cout << "Its individual word score was: " << scamWords[i].wordPointTotal << endl;
+        cout << "________________________________________________________" << endl;
+    }
 
 
-
+    return 0;
 }
