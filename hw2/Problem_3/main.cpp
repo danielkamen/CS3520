@@ -15,9 +15,9 @@ public:
     void mazeGenerator(int sizes) {
         // min path is 3, and 100 is used to just not make a super big maze for this assignment
         int min = 3;
-        int max = 100;
-        if (sizes < min || sizes >= max) {
-            cout << "Hey, you can't make a " << sizes << "x" << sizes << " maze. Call this method again with a size between" << min << " and " << max << "." << endl;
+        int max = 40;
+        if (sizes < min || sizes > max) {
+            cout << "Hey, you can't make a " << sizes << "x" << sizes << " maze. Call this method again with a size between " << min << " and " << max << "." << endl;
         }
         
         else {
@@ -75,7 +75,7 @@ public:
 
 int main() {
     static int inputNum;
-    cout << "Enter a number to make the maze (between 3 and 100)" << endl;
+    cout << "Enter a number to make the maze (between 3 and 40)" << endl;
     cin >> (inputNum);
     MazeGenerator first;
     first.border = "#";
@@ -105,7 +105,7 @@ cout<<endl;
    MazeGenerator fourth;
     fourth.border = "#";
     fourth.path = "-";
-    fourth.mazeGenerator(45);
+    fourth.mazeGenerator(40);
     fourth.print(fourth.mazeMade);
 cout<<endl;
   cout<<endl;
