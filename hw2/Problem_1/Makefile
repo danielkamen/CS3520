@@ -14,7 +14,7 @@ _OBJ2 = file2.o
 _OBJ3 = Main.o
 
 $(ODIR) / % .o: % .cpp % .hpp $(DEPS)
-$(CC) - c - o $@ $ < $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
     all: Main file1header file1
     main : $(_OBJ1)
