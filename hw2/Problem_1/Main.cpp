@@ -9,7 +9,8 @@ using namespace std;
 
 int main() {
     // gets the vector of rolls
-vector<int> rolls = std1::diceRolls(36000);
+    int numRolls = 36000;
+vector<int> rolls = std1::diceRolls(numRolls);
 
 // gets the frequency of each number
 int twoRoll = std1::frequency(rolls, 2);
@@ -39,7 +40,7 @@ float tenPer = std1::asPercentage(size, tenRoll);
 float elevenPer = std1::asPercentage(size, elevenRoll);
 float twelvePer = std1::asPercentage(size, twelveRoll);
 
-
+cout<< "Heres the data for "<<numRolls<<" pair of dice rolls"<<endl;
 cout<<"___________________________________________"<<endl;
 cout<<"Tally of 2's  rolled: "<<twoRoll<<"      As percentage: "<<twoPer<<endl;
 cout<<"Tally of 3's  rolled: "<<threeRoll<<"     As percentage: "<<threePer<<endl;
