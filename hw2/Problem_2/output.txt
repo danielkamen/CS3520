@@ -2,10 +2,10 @@ Hello TA, please scroll to the bottom to see my response to the last two questio
 
 
 _______________________________________________________
-Sum of scam word points: 6
+Sum of scam word points: 12
 
 ***********************************************************
-Percentage of words that are common in scam files: 2.27273%
+Percentage of words that are common in scam files: 3.84615%
 ***********************************************************
 
 _______________________________________________________
@@ -39,11 +39,11 @@ It was found:                  2 times
 Its individual word score was: 6
 ________________________________________________________
 
-Sus Word:                      help
+Sus Word:                      account
 Was found on this line: 
-Word wasn't found in file
-It was found:                  0 times
-Its individual word score was: 0
+Send in a password to update your account. Hive me your money and account info, invoice.:x
+It was found:                  1 times
+Its individual word score was: 3
 ________________________________________________________
 
 Sus Word:                      suspicious
@@ -69,9 +69,9 @@ ________________________________________________________
 
 Sus Word:                      password
 Was found on this line: 
-Word wasn't found in file
-It was found:                  0 times
-Its individual word score was: 0
+Send in a password to update your account. Hive me your money and account info, invoice.:x
+It was found:                  1 times
+Its individual word score was: 3
 ________________________________________________________
 
 Sus Word:                      expire
@@ -221,3 +221,4 @@ It was found:                  0 times
 Its individual word score was: 0
 ________________________________________________________
 
+this approach doesn't work very well. Its not accurate with scam emails who just have images with text in them. Also longer non-scam emails get a large score even if its not a scam email, due to the large number of words.

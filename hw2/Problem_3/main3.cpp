@@ -110,5 +110,6 @@ int main() {
     cout << endl;
     cout << endl;
     cout << endl;
+	cout<<"This doesnt make a good maze pretty much ever. Theres no garentee a valid path is made"<<endl;
 
 }

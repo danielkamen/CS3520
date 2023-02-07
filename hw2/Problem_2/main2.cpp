@@ -4,7 +4,6 @@
 #include <iostream>
 #include <sstream>
 #include <string>
-#define EXIT_FAILURE -1
 
 using namespace std;
 
@@ -58,7 +57,7 @@ int main() {
     f4.word = "invoice";
     f4.value = 3;
     scamWords.push_back(f4);
-    f5.word = "help";
+    f5.word = "account";
     f5.value = 3;
     scamWords.push_back(f5);
     f6.word = "suspicious";

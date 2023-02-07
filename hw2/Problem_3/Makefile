@@ -11,13 +11,13 @@ LIBS=-lncurses
 _DEPS = 
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ1 = main.o
+_OBJ1 = main3.o
 OBJ1 = $(patsubst %,$(ODIR)/%,$(_OBJ1))
 
 $(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-main: $(OBJ1)
+main3: $(OBJ1)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 
@@ -25,7 +25,7 @@ main: $(OBJ1)
 
 clean:
 	rm -f *~ core $(INCDIR)/*~ 
-	rm -f main
+	rm -f main3
 	rm -f *.o
 
 etags: 
