@@ -15,14 +15,17 @@ _OBJ3 = file2.o
 
 $(ODIR) / % .o: % .cpp % .hpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
-	
-    all: main file2header file2
-    main : $(_OBJ1)
-    $(CC) - o $@ $ ^ $(CFLAGS) $(LIBS)
+
+    all: main2 file2header file2
+
+    main2 : $(_OBJ1)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+
     file2header : $(_OBJ2)
-    $(CC) - o $@ $ ^ $(CFLAGS) $(LIBS)
+    $(CC) - o $@ $^ $(CFLAGS) $(LIBS)
+
     file2 : $(_OBJ3)
-    $(CC) - o $@ $ ^ $(CFLAGS) $(LIBS)
+    $(CC) - o $@ $^ $(CFLAGS) $(LIBS)
     .PHONY: clean
 
     clean :

@@ -18,11 +18,14 @@ $(ODIR) / % .o: % .cpp % .hpp $(DEPS)
 
     all: Main file1header file1
     main : $(_OBJ1)
-    $(CC) - o $@ $ ^ $(CFLAGS) $(LIBS)
+    $(CC) - o $@ $^ $(CFLAGS) $(LIBS)
+
     file2header : $(_OBJ2)
-    $(CC) - o $@ $ ^ $(CFLAGS) $(LIBS)
+    $(CC) - o $@ $^ $(CFLAGS) $(LIBS)
+
     file2 : $(_OBJ2)
-    $(CC) - o $@ $ ^ $(CFLAGS) $(LIBS)
+    $(CC) - o $@ $^ $(CFLAGS) $(LIBS)
+	
     .PHONY: clean
 
     clean :
