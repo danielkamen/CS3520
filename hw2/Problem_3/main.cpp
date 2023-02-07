@@ -19,11 +19,10 @@ public:
         if (sizes < min || sizes > max) {
             cout << "Hey, you can't make a " << sizes << "x" << sizes << " maze. Call this method again with a size between " << min << " and " << max << "." << endl;
         }
-        
         else {
             vector<vector<string> > board;
             for (int i = 0; i < sizes; i++) {
-              vector<string> row;
+                vector<string> row;
                 for (int j = 0; j < sizes; j++) {
                     if (i == 0 || i == sizes - 1) {
                         row.push_back(border);
@@ -39,20 +38,20 @@ public:
                             row.push_back(border);
                         }
                         else {
-                             row.push_back(path);
+                            row.push_back(path);
                         }
 
                     }
 
 
                 }
-              board.push_back(row);
+                board.push_back(row);
             }
-          // assigns an enterance and exit value
-          int randomEnterance = rand() % sizes;
-          int randomExit = rand() % sizes;
-          board[randomEnterance][0] = path;
-          board[randomExit][sizes - 1] = path;
+            // assigns an enterance and exit value
+            int randomEnterance = rand() % sizes;
+            int randomExit = rand() % sizes;
+            board[randomEnterance][0] = path;
+            board[randomExit][sizes - 1] = path;
             mazeMade = board;
         }
     }
@@ -82,33 +81,34 @@ int main() {
     first.path = "-";
     first.mazeGenerator(inputNum);
     first.print(first.mazeMade);
-
-  cout<<endl;
-  cout<<endl;
-    cout<<endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
     MazeGenerator second;
     second.border = "#";
     second.path = "-";
     second.mazeGenerator(25);
     second.print(second.mazeMade);
-cout<<endl;
-  cout<<endl;
-  cout<<endl;
+    cout << endl;
+    cout << endl;
+    cout << endl;
     MazeGenerator third;
     third.border = "#";
     third.path = "-";
     third.mazeGenerator(35);
     third.print(third.mazeMade);
-cout<<endl;
-  cout<<endl;
-  cout<<endl;
-   MazeGenerator fourth;
+
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    MazeGenerator fourth;
     fourth.border = "#";
     fourth.path = "-";
-    fourth.mazeGenerator(40);
+    fourth.mazeGenerator(25);
     fourth.print(fourth.mazeMade);
-cout<<endl;
-  cout<<endl;
-  cout<<endl;
-
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "This doesn't make a good make pretty much ever. I can change the amount of borders spawen in the middle of the board, but that doesn't gaentee a valid path" << endl;
+    cout << "Considering this ir random, its highly unlikely a valid maze is ever made with this approach. Would probably need to incoperate more algorithms" << endl;
 }
