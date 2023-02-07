@@ -11,7 +11,7 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ1 = main.o
 
-$(ODIR)/%.o: %.cpp $(DEPS)
+$(ODIR)/%.o: %.cpp % .hpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 all: main
