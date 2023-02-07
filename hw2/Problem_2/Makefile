@@ -1,39 +1,38 @@
-IDIR = .. / include
-CC = g++
-CFLAGS = -I$(IDIR) - g - O0
 
-ODIR = .
 
-LIBS = -lncurses
+IDIR =../include
+CC=g++
+CFLAGS= -I$(IDIR) -g -O0 -std=c++11
 
-_DEPS =
-DEPS = $(patsubst%, $(IDIR) / %, $(_DEPS))
+ODIR=.
+
+LIBS=-lncurses
+
+_DEPS = 
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 _OBJ1 = main2.o
-_OBJ2 = file2header.o
-_OBJ3 = file2.o
+OBJ1 = $(patsubst %,$(ODIR)/%,$(_OBJ1))
 
-$(ODIR) / % .o: % .cpp % .hpp $(DEPS)
+_OBJ2 = file2.o
+OBJ2 = $(patsubst %,$(ODIR)/%,$(_OBJ2))
+
+$(ODIR)/%.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-    all: main2 file2header file2
-
-    main2 : $(_OBJ1)
+main2: $(OBJ1)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
-    file2header : $(_OBJ2)
-    $(CC) - o $@ $^ $(CFLAGS) $(LIBS)
+file2: $(OBJ2)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
-    file2 : $(_OBJ3)
-    $(CC) - o $@ $^ $(CFLAGS) $(LIBS)
-    .PHONY: clean
+.PHONY: clean
 
-    clean :
-rm - f * ~core $(INCDIR)/*~
-rm -f main
-rm -f file2
-rm -f file2header
-rm -f *.o
+clean:
+	rm -f *~ core $(INCDIR)/*~ 
+	rm -f file2
+	rm -f main2
+	rm -f *.o
 
-etags:
-    find . -type f -iname "*.[ch]" | xargs etags --append
+etags: 
+	find . -type f -iname "*.[ch]" | xargs etags --append         
