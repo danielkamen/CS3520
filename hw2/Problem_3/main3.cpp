@@ -20,20 +20,27 @@ public:
             cout << "Hey, you can't make a " << sizes << "x" << sizes << " maze. Call this method again with a size between " << min << " and " << max << "." << endl;
         }
 
-        else {
+        else { 
+
+            // initialzes an empty board vector
             vector<vector<string> > board;
             for (int i = 0; i < sizes; i++) {
+                // initalizes an empty row  vector
                 vector<string> row;
                 for (int j = 0; j < sizes; j++) {
+                    // if its the first or last row
                     if (i == 0 || i == sizes - 1) {
                         row.push_back(border);
                     }
+                    // if its the first or last column
                     else  if (j == 0 || j == sizes - 1) {
                         row.push_back(border);
                     }
-                    else if (j < sizes - 1) {
+                    // if its anything inbetween the first and last column
+                    else if (j < sizes - 1 && j < 0) {
                         //char value that gets added
                         string spot;
+                        // rand value to detemine if a path or border is added
                         int pathOrBorder = (rand() % 2) + 1;
                         if (pathOrBorder == 1) {
                             row.push_back(border);
@@ -58,6 +65,7 @@ public:
     }
 
 
+    // prints each value in the vector, and adds a space between items in a row
     void print(vector<vector<string> > maze) {
         string mazeOut = "";
         for (int i = 0; i < maze.size(); i++) {
@@ -74,9 +82,11 @@ public:
 };
 
 int main() {
+    
     static int inputNum;
     cout << "Enter a number to make the maze (between 3 and 40)" << endl;
     cin >> (inputNum);
+    // initalizer for the mazes
     MazeGenerator first;
     first.border = "#";
     first.path = "-";
