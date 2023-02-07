@@ -1,0 +1,62 @@
+Be  sure  to  show  your  work  and  provide  brief  
+explanation. 
+
+If you do not show your work or don’t provide explanation, you will not receive 
+any credit even if your final answer is correct. 
+ 
+a) Convert the hexadecimal number 3C2 to binary, octal and decimal representations. 
+
+Hex:            3C2
+// I used a hex to binary value table for each value
+Binary:  3 = 0011
+         C = 1100
+         2 = 0010
+
+         Combine them...
+         Answer:            001111000010 (base 2)
+        
+
+Octoal: Get to binary: (from above) 001111000010
+        Split up the terms: 001 = 1
+                          : 111 = 7
+                          : 000 = 0
+                          : 010 = 2
+                Combine them ...
+        Answer:             1702 (base 8)
+
+Decimal: 3 = 3*16^2 = 768
+      c = 12*16^1   = 192
+         2 = 2*1    =   2
+        Sum_________________
+        Answer: 962
+
+b) Given two numbers in different formats (one is hex number 1A01 and second is a decimal 
+number  8020),  what  would  be  the  best  way  to  compute  the  sum  and  product  to  get  the  
+results in  hexadecimal format. Discuss your approach first then  perform the calculations 
+and show your work. Notice that you can probably convert them to any format and then 
+perform  the  computation  in  that  format.  Choose  the  approach  that  is  the  easiest  and  
+doesn’t require much effort. 
+
+My approach would be to first convert the binary number to hex. Then add the two hex numbers in base 16.
+
+Calculations:
+8020 % 16 = 4               to hex: 4
+8020/16 =501.25 (Use 501)
+
+501 % 16 = = 5              to hex: 5
+501/16 = 31.31 (use 31)
+
+31 % 16 = 15                to hex: e
+31/16 = 1.9 (USE 1)
+
+1 %16 = 1                   to hex: 1
+1/16 = 0
+
+combine them (top number is 0th place, bottom is 3rd):   8020 -> 1E54 (base 16)
+
+Additon in base 16:
+carry:  1                   A + E = 15 + 2 -> carry 1; remainder is 8
+        1A01
+        1E54
+    + _______
+        3855
