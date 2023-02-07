@@ -226,10 +226,8 @@ int main() {
         cout << endl;
     }
 
-    if (perScam > .05) {
-        cout << "This"
-    }
-
+    
+    cout<<"this approach doesn't work very well. Its not accurate with scam emails who just have images with text in them. Also longer non-scam emails get a large score even if its not a scam email, due to the large number of words."<<endl;
 
     return 0;
 }
