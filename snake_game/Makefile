@@ -18,7 +18,7 @@ $(ODIR)/%.o: %.cpp $(DEPS)
 all: snake_game
 
 snake_game: $(OBJ)
-	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 
