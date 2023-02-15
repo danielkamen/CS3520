@@ -60,6 +60,8 @@ int main() {
 
 // work for 2.
 // number of errors: 4
+// The mistake I made consistently was trying to call planet_ptr->personal_ptr->FIELD wihtout defined *planet_ptr first .
+// also I tried two arrows instead of one arrow with a . to access fields.
  planet planet_record;
   planet_record.planet_number = 1;
   planet_record.planet_name = new char[6];
