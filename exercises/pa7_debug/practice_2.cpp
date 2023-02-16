@@ -6,29 +6,43 @@
 
 #include <iostream>
 using namespace std;
-void display(double Matrix[3][3],int size); 
 
-int main(void) {
-	int size=3; 
-	int Matrix[size + 1][size + 1]; 
-	cin<<"Enter 9 elements of the matrix:"<<endl;
-	for (i = 0; i < size; i++) 
+// error 8 tajes in an int matrix not double matrix
+void display(int Matrix[3][3],int size); 
+
+// error 1: needs to be int main()
+int main() {
+  //error 2: had to make size const to declare it in size
+	const int size=3; 
+  // error 10: has to be size x size, not 4x4
+	int Matrix[size][size]; 
+  // errors 3: cin arrows in wrong direction
+  // error 4 cant have endl in cin line
+	cout<<"Enter 9 elements of the matrix:";
+
+  // error 5: had to declare i as int
+	for (int i = 0; i < size; i++) 
     {
-      int j = 0;
-      for (; j < size; j++){
-        cin>>Matrix[j][i]; 
+      // error 6: int j = 0 has to be in loop
+      for (int j = 0; j < size; j++){
+        int input;
+        cin>> input;
+       Matrix[j][i] = input; 
       }
     }
-	display(&Matrix,3);
+    // error 9: cant take in a memory address
+	display(Matrix,3);
 	return 0;
 }
 
-void display(int Matrix[3][3], float size) { 
-	for (int i = 0; i < size , i++) {
-		for (int j = 0; j < size; i++) 
+// error 8: needs to be an int not float
+void display(int Matrix[3][3], int size) { 
+	for (int i = 0; i < size ; i++) {
+    // shouldn increment by j++ not i++
+		for (int j = 0; j < size; j++) 
         {
             cout<<Matrix[i][j]<<", ";
         }
-        cout<<endl
+        cout<<endl;
 	}    
 }

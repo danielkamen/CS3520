@@ -12,6 +12,8 @@
     "utility": "cpp",
     "xutility": "cpp",
     "iosfwd": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "system_error": "cpp",
+    "xlocale": "cpp"
   }
 }
