@@ -16,7 +16,7 @@ using namespace std;
 
 void update_3d(double ***var, int length, int width, int height);
 // error 4 make matrix const to not change data
-void display_1d(const double ***var, int length);
+void display_1d(const double ***var, int length, int width, int height);
 
 //error 5: doesnt take in
 int main() {
@@ -38,7 +38,7 @@ int main() {
     //initialize the array to non-zero values (use scanf or random numbers generator)
     update_3d(Matrix_3d, l, w, h);
     //display the values
-    display_1d(Matrix_3d, l);
+    display_1d((const double ***)Matrix_3d, l, w , h);
     return 0;
 }
 
@@ -60,24 +60,13 @@ void update_3d(double ***matrix, int length, int width, int height) {
 //update as needed. 1 'for' loop only with 1 iterator to print all values with addresses
 //must not be able to update the array.
 //Share any observations.
-void display_1d(const double ***matrix, int size) {
-
-while(*cptr != '\0'){
-cout<<*cptr<<" ";
-cptr++;
-    for (int i = 0; i < size; i++) {
-
-        const double ** m3ptr = matrix[i];
-        const int sizeI = sizeof(matrix[i]);
-        while(**m3ptr != sizeI) {
-            const double * m2ptr = matrix[i][**m3ptr];
-            const int sizeL = sizeof(matrix[i][**ptr]);
-            while(*m2ptr != sizeL ) {
-                cout<<<<matrix[i][**m3Ptr][*m2ptr] <<endl;
-                m2ptr++;
-            }
-            m3ptr++;
-        }
-    }
+void display_1d(const double ***matrix, int length, int width, int height) {
+// how on earch can u do this without a triple for-loop???
+for (int i = 0; i < length; i++) {
+        for (int j = 0; j < width; j++) {
+            for (int k = 0; k < height; k++) {
+ cout << "matrix[" << i << "][" << j << "][" << k << "] = " << &matrix[i][j][k] << "\tvalue = " << matrix[i][j][k] << endl;
+}
+}
 }
 }
