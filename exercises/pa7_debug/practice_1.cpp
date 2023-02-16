@@ -43,8 +43,8 @@ int main() {
 //the return value of your func should be true / false only
 // error 11: update return value to bool
 // error 12: update inputs to only take in 1 int
-bool func(int n)
-{
+bool func(int n) {
+
 
         // error 13: changed float to int
         // error 15 forgot semicolon
