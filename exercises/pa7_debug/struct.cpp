@@ -51,14 +51,14 @@ int main(void) {
 
 
 // error 6: didndt dereferance cPt
-  cout << "Car's name is" << c.name << ", and should be the same as" << cPtr->name
+  cout << "Car's name is " << c.name << ", and should be the same as" << cPtr->name
        << ".\n";
 
         cout<<endl; 
   // added this to break it up visually.
 
 // error 7: refered to car.modelyear instead of c.modelYear
-  cout << "Car's model year is" << c.modelYear << ", and should be the same as "
+  cout << "Car's model year is " << c.modelYear << ", and should be the same as "
   //error 8: didnt call the cPtr at all, which should also be dereferanced ---------------
        << cPtr->modelYear << ".\n";
 
@@ -66,7 +66,7 @@ int main(void) {
   // added this to break it up visually.
 
   
-  cout << "Car's speed is" << c.speed << ", and should be the same as "
+  cout << "Car's speed is " << c.speed << ", and should be the same as "
   // error 9: w is jsut not right, needs cPtr->speed to go from pointer to variabler -----
        << cPtr->speed << ".\n";
 }
