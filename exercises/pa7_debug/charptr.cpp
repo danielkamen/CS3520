@@ -3,18 +3,33 @@
 
 //Number of bugs/errors : 8
 
-#include <stdio>
+// error 1: should be cstdio
+// error 2: didnt include iostream
+#include <iostream>
+#include <cstdio>
 #include <string>
 
 using namespace std;
 
-void main(void){
+// error 3: shouldnt take in a void
+// error 4: should return an int
+int main() {
     char s[20];
-    char cPtr;
-    cin>>s;
-    cPtr = s;
-    while(cPtr-- == '\0'){
-        cout<<cPtr++;
+    // error 5: forgot to make cPtr a pointer, missing *
+    char *cPtr;
+
+  
+    cout << "Enter ur stuff under 20 characters ";
+    cin.getline(s, 20);
+     cPtr = s;
+  cout<<endl;
+  // error 6: fbad logic here
+  int offset = 0;
+  // error 7: bad logic again
+    while(*(cPtr + offset) != '\0'){
+      // error 8: bad logic
+        cout<<*(cPtr + offset);
+      offset++;
     }
   cout<<"\n";
   return 0;
