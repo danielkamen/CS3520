@@ -173,8 +173,8 @@ bool eat_itself(Snake *snake)
 }
 
 int len(Snake *snake) {
-  int len = 0;
-  while (snake) {
+  int len = 1;
+  while (snake->next) {
     len++;
     snake = snake->next;
   }

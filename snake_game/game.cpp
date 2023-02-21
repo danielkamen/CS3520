@@ -79,7 +79,7 @@ void game() {
       break;
 
     case ALIVE:
-      Snake *movedSnake;
+
       enum Type newType;
       enum Type oldFoodType;
       if (food_exists(foods, snake->x, snake->y)) {
@@ -88,11 +88,11 @@ void game() {
         if (oldFoodType == Increase) {
          snake = grow_tail(snake, key);
           score += 20;
-          if (len(snake) > 1) {
+        } else if (len(snake) > 1) {
             snake = remove_tail(snake);
             score -= 10;
           }
-        }
+        
         
 
         foods = remove_eaten_food(foods, snake->x, snake->y);
@@ -116,6 +116,11 @@ void game() {
       timeout(-1);
       ch = get_char();
         while(ch !=80 && ch !=112) {
+          if (ch  == 81 ||ch ==113) {
+            state = EXIT;
+            timeout(100);
+            break;
+          }
             ;
         }
         timeout(100);
@@ -131,12 +136,12 @@ void game() {
         }
         break;
       case UP:
-        if (key != UP && key != UP) {
+        if (key != UP && key != DOWN) {
           key = UP;
         }
         break;
       case DOWN:
-        if (key != DOWN && key != DOWN) {
+        if (key != DOWN && key != UP) {
           key = DOWN;
         }
         break;

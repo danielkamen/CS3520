@@ -15,7 +15,7 @@ Food* create_food(int x, int y, enum Type type){
     if (type == Increase){
         new_food->type = 'O';
     }
-    else if(type == Decrease){
+    else if (type == Decrease){
         new_food->type = 'X';
     }
     new_food->next = NULL;
