@@ -1,35 +1,4 @@
-/* game_window.cpp -------
- *
- * Filename: game_window.cpp
- * Description:
- * Author: Adeel Bhutta
- * Maintainer:
- * Created: Tue Sep  6 14:10:06 2022
- * Last-Updated: June 4 11:00 2022
- * Keywords:
- * Compatibility:
- *
- */
 
-/* Commentary:
- *
- *
- *
- */
-
-/* Change log:
- *
- *
- */
-
-/* Copyright (c) 2022 Adeel Bhutta
- *
- * All rights reserved.
- *
- * Additional copyrights may follow
- */
-
-/* Code: */
 
 #include <cstdlib>
 #include <ncurses.h>
