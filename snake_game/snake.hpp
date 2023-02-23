@@ -1,7 +1,12 @@
 
 #include <cstdbool>
 #include "key.hpp"
-
+#define BORDER_PAIR     1
+#define INC_SNACK_PAIR     2
+#define TAIL_PAIR     3
+#define BODY_PAIR  4
+#define HEAD_PAIR   5
+#define GRASS_PAIR 6
 struct Snake {
   int x;
   int y;

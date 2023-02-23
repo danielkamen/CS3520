@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ncurses.h>
 #include "game_window.hpp"
+#define BORDER_PAIR     1
 
 gamewindow_t *init_GameWindow(int upper_left_x, int upper_left_y, int width, int height)
 {
@@ -21,6 +22,9 @@ gamewindow_t *init_GameWindow(int upper_left_x, int upper_left_y, int width, int
 
 void draw_Gamewindow(gamewindow_t *r)
 {
+	start_color();
+	 init_pair(BORDER_PAIR, COLOR_YELLOW, COLOR_GREEN);
+	attron(COLOR_PAIR(BORDER_PAIR));
 	int row_counter, column_counter;
 
 	// Draw Top of room

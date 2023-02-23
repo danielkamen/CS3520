@@ -12,7 +12,6 @@ int x_max, y_max;
 
 int main(void){
     printf("thuoeou");
-    
     if (ready() == 's' || ready() == 'S') {
         game();
     }

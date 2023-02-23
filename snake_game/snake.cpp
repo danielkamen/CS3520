@@ -159,11 +159,26 @@ Snake *grow_tail(Snake *snake, KEY key) {
 // draws the snake on the board
 void draw_snake(Snake *snake)
 {
-  while (snake)
-  {
+  start_color();
+  int count = 0;
+  init_pair(TAIL_PAIR, COLOR_BLACK, COLOR_YELLOW);
+  init_pair(BODY_PAIR, COLOR_BLACK, COLOR_RED);
+  init_pair(HEAD_PAIR, COLOR_BLACK, COLOR_MAGENTA);
+  while (snake->next)
+  { switch(count) {
+    case 0:
+    attron(COLOR_PAIR(HEAD_PAIR));
+    break;
+    default:
+    attron(COLOR_PAIR(BODY_PAIR));
+    break;
+  }
     mvprintw(snake->y, snake->x, "%c", snake->symbol);
     snake = snake->next;
+    count++;
   }
+  attron(COLOR_PAIR(TAIL_PAIR));
+  mvprintw(snake->y, snake->x, "%c", snake->symbol);
 }
 
 // checks if it eats itself, if it does, then return true

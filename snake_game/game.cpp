@@ -7,6 +7,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <ncurses.h>
+#define BORDER_PAIR     1
+#define INC_SNACK_PAIR     2
+#define DEC_SNACK_PAIR     3
+ 
 void generate_points(int *food_x, int *food_y, int width, int height,
                      int x_offset, int y_offset) {
   *food_x = rand() % width + x_offset + 1;
@@ -28,6 +32,7 @@ void game() {
   int score = 0;
   int Speed = 1;
 
+
   struct timespec timeret;
   timeret.tv_sec = 0;
   timeret.tv_nsec = 999999999 / (4 * Speed);
@@ -37,6 +42,9 @@ void game() {
     case INIT:
       initscr();
       start_color();
+      init_pair(BORDER_PAIR, COLOR_WHITE, COLOR_WHITE);
+     init_pair(DEC_SNACK_PAIR, COLOR_BLACK, COLOR_RED);
+      init_pair(INC_SNACK_PAIR, COLOR_BLACK, COLOR_GREEN);
       nodelay(stdscr, TRUE); // Dont wait for char
       noecho();              // Don't echo input chars
       getmaxyx(stdscr, y_max, x_max);
@@ -51,8 +59,9 @@ void game() {
       // Init board
       window = init_GameWindow(x_offset, y_offset, width, height);
 
+      attron(COLOR_PAIR(BORDER_PAIR));
       draw_Gamewindow(window);
-
+      
       // Init snake
       snake = init_snake(x_offset + (width / 2), y_offset + (height / 2));
       snake->speed = 1;
@@ -158,11 +167,16 @@ void game() {
       snake = move_snake(snake, key);
       // Draw everything on the screen
       clear();
-      mvprintw(20, 20, "Key entered: %c", ch);
-      mvprintw(40, 20, "Score: %i", score);
-      draw_Gamewindow(window);
+      
+      
+      
       draw_snake(snake);
       draw_food(foods);
+      attroff(INC_SNACK_PAIR);
+      attroff(DEC_SNACK_PAIR);
+      draw_Gamewindow(window);
+      mvprintw(20, 20, "Key entered: %c", ch);
+      mvprintw(40, 20, "Score: %i", score);
 
       break;
 
