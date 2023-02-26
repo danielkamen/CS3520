@@ -1,35 +1,12 @@
-/* snake.hpp -------
- *
- * Filename: snake.hpp
- * Description:
- * Author: Adeel Bhutta
- * Maintainer:
- * Created: Sun Sep 13 21:01:02 2022
- * Last-Updated: September 13 22:43 2022
- *
- */
-
-/* Commentary:
- *
- *
- *
- */
-
-/* Change log:
- *
- *
- */
-
-/* Copyright (c) 2022 Adeel Bhutta
- *
- * All rights reserved.
- *
- * Additional copyrights may follow
- */
-
 
 #include <cstdbool>
-
+#include "key.hpp"
+#define BORDER_PAIR     1
+#define INC_SNACK_PAIR     2
+#define TAIL_PAIR     3
+#define BODY_PAIR  4
+#define HEAD_PAIR   5
+#define GRASS_PAIR 6
 struct Snake {
   int x;
   int y;
@@ -47,4 +24,5 @@ Snake* move_snake(Snake* snake, int direction);
 void draw_snake(Snake* snake);
 bool eat_itself(Snake* snake);
 Snake* remove_tail(Snake* snake);
+Snake *grow_tail(Snake *snake, enum KEY);
 int len(Snake* snake);
