@@ -1,23 +1,45 @@
 
 
 #include <cstdlib>
+#include <stdlib.h> 
 #include <ncurses.h>
 #include <cstdbool>
+#include <time.h>
 #include "food.hpp"
-#define DEC_SNACK_PAIR     1
-#define INC_SNACK_PAIR     2
 
 //Create new food
-Food* create_food(int x, int y, enum Type type){
+Food* create_food(int x, int y, enum Type type, int randNum){
     Food* new_food = (Food*)malloc(sizeof(Food));
-     
+    int ran = randNum;
     new_food->x = x;
     new_food->y = y;
     if (type == Increase){
         new_food->type = 'O';
+        switch(ran) {
+            case (0):
+            new_food->subType = 'E';
+            break;
+            case (1):
+            new_food->subType = 'U';
+            break;
+            default:
+            new_food->subType = 'A';
+            break;
+        }
     }
     else if (type == Decrease){
         new_food->type = 'X';
+        switch(ran) {
+            case (0):
+                 new_food->subType = 'X';
+                 break;
+            case (1):
+                 new_food->subType = 'H';
+                 break;
+            default:
+                  new_food->subType = 'L';
+                  break;
+        }
     }
     new_food->next = NULL;
 
@@ -92,16 +114,8 @@ Food* remove_eaten_food(Food* foods, int x, int y){
 // Display all the food
 void draw_food (Food *foods)
 {   Food* temp = foods;
-start_color();
-init_pair(DEC_SNACK_PAIR, COLOR_BLACK, COLOR_RED);
-init_pair(INC_SNACK_PAIR, COLOR_BLACK, COLOR_GREEN);
     while(temp) {
-        if (food_type(temp, temp->x, temp->y) == Decrease) {
-            attron(COLOR_PAIR(DEC_SNACK_PAIR));
-        } else {
-            attron(COLOR_PAIR(INC_SNACK_PAIR));
-        }
-        mvprintw(temp->y, temp->x, "%c", temp->type);
+        mvprintw(temp->y, temp->x, "%c", temp->subType);
         temp = temp->next;
     } 
     

@@ -125,8 +125,17 @@ Snake *grow_tail(Snake *snake, KEY key) {
       break;
   }
   Snake *newTail = create_tail(x,y);
+   newTail->color[0] = oldTail->color[0];
+  newTail->color[1] = oldTail->color[1];
+  newTail->color[2] = oldTail->color[2];
+  newTail->speed = oldTail->speed;
+  newTail->symbol = oldTail->symbol;
 
-   switch(key)  {
+
+  if (len(snake) == 1) {
+    oldTail->next = newTail;
+  } else {
+     switch(key)  {
     case LEFT:
       x++;
       break;
@@ -140,19 +149,19 @@ Snake *grow_tail(Snake *snake, KEY key) {
       y--;
       break;
   }
+
   Snake *finalNewTail = create_tail(x,y);
-  oldTail->next=newTail;
-  newTail->next = finalNewTail;
-  newTail->color[0] = oldTail->color[0];
-  newTail->color[1] = oldTail->color[1];
-  newTail->color[2] = oldTail->color[2];
-  newTail->speed = oldTail->speed;
-  newTail->symbol = oldTail->symbol;
   finalNewTail->color[0] = oldTail->color[0];
   finalNewTail->color[1] = oldTail->color[1];
   finalNewTail->color[2] = oldTail->color[2];
   finalNewTail->speed = oldTail->speed;
   finalNewTail->symbol = oldTail->symbol;
+  oldTail->next=newTail;
+  newTail->next = finalNewTail;
+  }
+
+  
+
   return snake;
 }
 
@@ -161,23 +170,12 @@ void draw_snake(Snake *snake)
 {
   start_color();
   int count = 0;
-  init_pair(TAIL_PAIR, COLOR_BLACK, COLOR_YELLOW);
-  init_pair(BODY_PAIR, COLOR_BLACK, COLOR_RED);
-  init_pair(HEAD_PAIR, COLOR_BLACK, COLOR_MAGENTA);
   while (snake->next)
-  { switch(count) {
-    case 0:
-    attron(COLOR_PAIR(HEAD_PAIR));
-    break;
-    default:
-    attron(COLOR_PAIR(BODY_PAIR));
-    break;
-  }
+  { 
     mvprintw(snake->y, snake->x, "%c", snake->symbol);
     snake = snake->next;
     count++;
   }
-  attron(COLOR_PAIR(TAIL_PAIR));
   mvprintw(snake->y, snake->x, "%c", snake->symbol);
 }
 
