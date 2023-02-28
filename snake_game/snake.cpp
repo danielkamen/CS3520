@@ -169,6 +169,8 @@ Snake *grow_tail(Snake *snake, KEY key) {
 void draw_snake(Snake *snake)
 {
   start_color();
+  init_pair(TAIL_PAIR, COLOR_BLACK, COLOR_YELLOW);
+  attron(COLOR_PAIR(TAIL_PAIR));
   int count = 0;
   while (snake->next)
   { 
@@ -177,13 +179,28 @@ void draw_snake(Snake *snake)
     count++;
   }
   mvprintw(snake->y, snake->x, "%c", snake->symbol);
+  attroff(COLOR_PAIR(TAIL_PAIR));
 }
 
 // checks if it eats itself, if it does, then return true
 bool eat_itself(Snake *snake)
 {
-  // TODO for Milestone 2 only
-}
+ Snake * temp1 = snake;
+ int headX = temp1->x;
+ int headY = temp1->y;
+ bool flag = false;
+ if (len(snake) > 3) {
+  temp1->next;
+  while(temp1) {
+    if (temp1->x == headX && temp1->y == headY) {
+      flag = true;
+    }
+    temp1->next;
+  }
+ }
+return flag;
+ }
+
 
 int len(Snake *snake) {
   int len = 1;
