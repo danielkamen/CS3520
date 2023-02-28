@@ -88,8 +88,8 @@ Obstacle* remove_eaten_Obstacle(Obstacle* obstacles, int x, int y) {
 void draw_obstacle(Obstacle *obstacle)
 {   Obstacle* temp = obstacle;
 start_color();
-init_pair(TAIL_PAIR, COLOR_RED, COLOR_WHITE);
-  attron(COLOR_PAIR(TAIL_PAIR));
+init_pair(5, COLOR_RED, COLOR_BLACK);
+  attron(COLOR_PAIR(5));
     while(temp) {
         
         for (int h = temp->y; h < temp->y + temp->height; h++) {
@@ -99,6 +99,6 @@ init_pair(TAIL_PAIR, COLOR_RED, COLOR_WHITE);
             }
         temp = temp->next;
     } 
-      attroff(COLOR_PAIR(TAIL_PAIR));
+      attroff(COLOR_PAIR(5));
     
 }

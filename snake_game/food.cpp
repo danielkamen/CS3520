@@ -31,7 +31,7 @@ Food* create_food(int x, int y, enum Type type, int randNum){
         new_food->type = 'X';
         switch(ran) {
             case (0):
-                 new_food->subType = 'X';
+                 new_food->subType = 'W';
                  break;
             case (1):
                  new_food->subType = 'H';
@@ -114,8 +114,20 @@ Food* remove_eaten_food(Food* foods, int x, int y){
 // Display all the food
 void draw_food (Food *foods)
 {   Food* temp = foods;
+start_color();
+init_pair(3, COLOR_YELLOW, COLOR_BLACK);
+init_pair(4, COLOR_GREEN, COLOR_BLACK);
+
     while(temp) {
-        mvprintw(temp->y, temp->x, "%c", temp->subType);
+        if (temp->type == 'X') {
+         attron(COLOR_PAIR(3));
+          mvprintw(temp->y, temp->x, "%c", temp->subType);
+          attroff(COLOR_PAIR(3));
+        } else if (temp->type == 'O') {
+         attron(COLOR_PAIR(4));
+          mvprintw(temp->y, temp->x, "%c", temp->subType);
+          attroff(COLOR_PAIR(4));
+        }
         temp = temp->next;
     } 
     
