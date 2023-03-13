@@ -1,31 +1,3 @@
-/* snake.cpp -------
- *
- * Filename: snake.cpp
- * Description:
- * Author: Adeel Bhutta
- * Maintainer:
- * Created: Sun Sep 13 9:12:30 2022
- * Last-Updated: September 13 22:40 2022
- *
- */
-
-/* Commentary:
- *
- *
- *
- */
-
-/* Change log:
- *
- *
- */
-
-/* Copyright (c) 2022 Adeel Bhutta
- *
- * All rights reserved.
- *
- * Additional copyrights may follow
- */
 
 #include <cstring>
 #include <cstdbool>
@@ -66,27 +38,40 @@ Snake *move_snake(Snake *snake, int direction)
   // TODO
   Snake *new_head = new Snake;
 
+  
   // Set the new head to have the x and y coordinates as the existing head of the snake
+  int row = snake->x;
+  int col = snake->y;
 
   switch (direction)
   {
   case UP:
-    // Write code to make the new head go up by 1 cell
+    col--;
     break;
   case DOWN:
-    // Write code to make the new head go down by 1 cell
+    col++;
     break;
   case RIGHT:
-    // Write code to make the new head go right by 1 cell
+    row++;
     break;
   case LEFT:
-    // Write code to make the new head go left by 1 cell
+    row--;
     break;
   }
 
-  // Set new head as the new head of the entire snake
+  new_head->x = row;
+   new_head->y = col;
+
+ // Set new head as the new head of the entire snake
+  new_head->next = snake;
   // Add all the features (color and symbol) to the new cell
+  new_head->color[0] = snake->color[0];
+  new_head->color[1] = snake->color[1];
+  new_head->color[2] = snake->color[2];
+  new_head->speed = snake->speed;
+  new_head->symbol = snake->symbol;
   //  Delete the tail from the snake: HINT - there is a remove tail function below
+  remove_tail(new_head);
 
   return new_head;
 }
@@ -101,18 +86,112 @@ Snake *remove_tail(Snake *snake)
   return snake;
 }
 
+Snake *get_tail(Snake *snake)
+{
+  Snake *end = snake;
+  while (end->next->next)
+    end = end->next;
+  return end;
+}
+
+Snake *grow_tail(Snake *snake, KEY key) {
+  Snake *temp = snake;
+  Snake *oldTail;
+ switch(len(snake)) {
+  case 1:
+    oldTail = temp;
+    break;
+  case 2:
+    oldTail = temp->next;
+    break;
+  default:
+    oldTail = get_tail(temp);
+    break;
+  } 
+  int x = oldTail->x;
+  int y = oldTail->y;
+  switch(key)  {
+    case LEFT:
+      x++;
+      break;
+    case RIGHT:
+      x--;
+      break;
+    case UP:
+      y++;
+      break;
+    case DOWN:
+      y--;
+      break;
+  }
+  Snake *newTail = create_tail(x,y);
+
+   switch(key)  {
+    case LEFT:
+      x++;
+      break;
+    case RIGHT:
+      x--;
+      break;
+    case UP:
+      y++;
+      break;
+    case DOWN:
+      y--;
+      break;
+  }
+  Snake *finalNewTail = create_tail(x,y);
+  oldTail->next=newTail;
+  newTail->next = finalNewTail;
+  newTail->color[0] = oldTail->color[0];
+  newTail->color[1] = oldTail->color[1];
+  newTail->color[2] = oldTail->color[2];
+  newTail->speed = oldTail->speed;
+  newTail->symbol = oldTail->symbol;
+  finalNewTail->color[0] = oldTail->color[0];
+  finalNewTail->color[1] = oldTail->color[1];
+  finalNewTail->color[2] = oldTail->color[2];
+  finalNewTail->speed = oldTail->speed;
+  finalNewTail->symbol = oldTail->symbol;
+  return snake;
+}
+
 // draws the snake on the board
 void draw_snake(Snake *snake)
 {
-  while (snake)
-  {
+  start_color();
+  int count = 0;
+  init_pair(TAIL_PAIR, COLOR_BLACK, COLOR_YELLOW);
+  init_pair(BODY_PAIR, COLOR_BLACK, COLOR_RED);
+  init_pair(HEAD_PAIR, COLOR_BLACK, COLOR_MAGENTA);
+  while (snake->next)
+  { switch(count) {
+    case 0:
+    attron(COLOR_PAIR(HEAD_PAIR));
+    break;
+    default:
+    attron(COLOR_PAIR(BODY_PAIR));
+    break;
+  }
     mvprintw(snake->y, snake->x, "%c", snake->symbol);
     snake = snake->next;
+    count++;
   }
+  attron(COLOR_PAIR(TAIL_PAIR));
+  mvprintw(snake->y, snake->x, "%c", snake->symbol);
 }
 
 // checks if it eats itself, if it does, then return true
 bool eat_itself(Snake *snake)
 {
   // TODO for Milestone 2 only
+}
+
+int len(Snake *snake) {
+  int len = 1;
+  while (snake->next) {
+    len++;
+    snake = snake->next;
+  }
+  return len;
 }

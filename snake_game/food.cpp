@@ -1,37 +1,11 @@
-/*food.cpp -------
-*
-* Filename: food.cpp
-* Description:
-* Author: Adeel Bhutta
-* Maintainer:
-* Created: Sat Sep 12 13:16:12 2022
-* Last-Updated: September 12 16:51 2022
-*
-*/
 
-/* Commentary:
-*
-*
-*
-*/
-
-/* Change log:
-*
-*
-*/
-
-/*Copyright (c) 2022 Adeel Bhutta
-*
-* All rights reserved.
-*
-* Additional copyrights may follow
-*/
 
 #include <cstdlib>
 #include <ncurses.h>
 #include <cstdbool>
 #include "food.hpp"
-
+#define DEC_SNACK_PAIR     1
+#define INC_SNACK_PAIR     2
 
 //Create new food
 Food* create_food(int x, int y, enum Type type){
@@ -42,7 +16,7 @@ Food* create_food(int x, int y, enum Type type){
     if (type == Increase){
         new_food->type = 'O';
     }
-    else if(type == Decrease){
+    else if (type == Decrease){
         new_food->type = 'X';
     }
     new_food->next = NULL;
@@ -70,22 +44,65 @@ void add_new_food(Food* foods, Food* new_food){
     temp->next = new_food;
 }
 
+// assumes this is called at a spot that contains a food. So call if food_exists -> food_type
+enum Type food_type(Food* foods, int x, int y) {
+    Food* temp = foods;
+        while(temp){
+        if(temp->x == x && temp->y == y)
+            if (temp->type=='O') {
+                return Increase;
+                break;
+            } else if (temp->type=='X'){
+                return Decrease;
+                break;
+            }
+        temp = temp->next;
+    }	
+}
 
-enum Type food_type(Food* foods, int x, int y){
-    //Implement the code to return the type of the food 
-    //present at position (x, y)	
-	
-}
+// assumes this is called at a spot that contains a food. So call if food_exists -> remove_eaten_food. Can remove multiple peices at the same spot, two snacks initalized at same spot
 Food* remove_eaten_food(Food* foods, int x, int y){
-	//Implement the code to remove food at position (x,y).
-	//Create a new linked list of type Food containing only the
-	//needed food and return this new list
+    Food* newFood = foods;     
+    // first item edge case
+     if (newFood->x == x && newFood->y == y) {
+            free(newFood);
+            newFood = newFood->next;
+            return newFood;
+        }
+
+    // all items between 2 and n-1 
+    while (newFood->next->next) {
+             // checks the second -> n-1 foods
+        if (newFood->next->x == x && newFood->next->y == y) {
+            newFood->next = newFood->next->next;
+            break;
+        } 
+         newFood = newFood->next;
+    }
+   
+    // nth item check
+     if (newFood->next->x == x && newFood->next->y == y) {
+         free(newFood->next);
+          newFood->next = NULL;
+         }
+
+    return foods;
 }
+
 // Display all the food
 void draw_food (Food *foods)
 {   Food* temp = foods;
+start_color();
+init_pair(DEC_SNACK_PAIR, COLOR_BLACK, COLOR_RED);
+init_pair(INC_SNACK_PAIR, COLOR_BLACK, COLOR_GREEN);
     while(temp) {
+        if (food_type(temp, temp->x, temp->y) == Decrease) {
+            attron(COLOR_PAIR(DEC_SNACK_PAIR));
+        } else {
+            attron(COLOR_PAIR(INC_SNACK_PAIR));
+        }
         mvprintw(temp->y, temp->x, "%c", temp->type);
         temp = temp->next;
-    }
+    } 
+    
 }
