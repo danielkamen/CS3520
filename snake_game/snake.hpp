@@ -14,6 +14,7 @@ struct Snake {
   char color[3];
   char symbol;
   struct Snake* next;
+  enum KEY direction;
 };
 
 typedef struct Snake Snake;
@@ -22,7 +23,11 @@ Snake* init_snake(int x, int y);
 Snake* create_tail(int x, int y);
 Snake* move_snake(Snake* snake, int direction);
 void draw_snake(Snake* snake);
-bool eat_itself(Snake* snake);
+Snake *get_tail(Snake *snake);
+bool eat_itself(Snake* snake, int x, int y);
 Snake* remove_tail(Snake* snake);
 Snake *grow_tail(Snake *snake, enum KEY);
 int len(Snake* snake);
+
+//Check if snake exists at coordinates
+bool snake_exists(Snake* foods, int x, int y);
