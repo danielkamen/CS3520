@@ -177,14 +177,20 @@ cout<<"Number of words in "<<input<<" : "<<allWordsFromFile.size()<<endl;
        << counttemp << endl;
 
     vector<WordInfo> listofSortedVowelsByCount;  
+
+    // places the unique WordInfo into a vector which can be sorted based on the counts (cant resort a set)
   for (auto w : listOfVowelWords) {
     listofSortedVowelsByCount.push_back(w);
   }
+
+  // sorts from highest to lowest count
   sort(listofSortedVowelsByCount.begin(), listofSortedVowelsByCount.end(), [](const WordInfo& left, const WordInfo& right) {
     return left.get_count() > right.get_count();
   }
   
   );
+
+  // outputs the data of each WordInfo
 for (auto w : listofSortedVowelsByCount) {
     w.output();
   }
