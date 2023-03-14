@@ -1,11 +1,33 @@
 Number of words in small.txt : 67
-Number of words in small.txt : starting with vowel: 22
-a     Word Length: 1, Frequency : 8
-of     Word Length: 2, Frequency : 4
-and     Word Length: 3, Frequency : 3
-in     Word Length: 2, Frequency : 2
-on     Word Length: 2, Frequency : 2
-england;     Word Length: 8, Frequency : 1
-ever.     Word Length: 5, Frequency : 1
-it     Word Length: 2, Frequency : 1
+Number of words in small.txt : starting with consanants 45
+with     Word Length: 4, Frequency : 4
+the     Word Length: 3, Frequency : 4
+were     Word Length: 4, Frequency : 3
+face,     Word Length: 5, Frequency : 2
+throne     Word Length: 6, Frequency : 2
+there     Word Length: 5, Frequency : 2
+jaw     Word Length: 3, Frequency : 2
+king     Word Length: 4, Frequency : 2
+large     Word Length: 5, Frequency : 2
+queen     Word Length: 5, Frequency : 2
+was     Word Length: 3, Frequency : 1
+to     Word Length: 2, Frequency : 1
+things     Word Length: 6, Frequency : 1
+plain     Word Length: 5, Frequency : 1
+that     Word Length: 4, Frequency : 1
+than     Word Length: 4, Frequency : 1
+state     Word Length: 5, Frequency : 1
+settled     Word Length: 7, Frequency : 1
+preserves     Word Length: 9, Frequency : 1
+both     Word Length: 4, Frequency : 1
+lords     Word Length: 5, Frequency : 1
+loaves     Word Length: 6, Frequency : 1
+general     Word Length: 7, Frequency : 1
+france.     Word Length: 7, Frequency : 1
+for     Word Length: 3, Frequency : 1
+fishes,     Word Length: 7, Frequency : 1
+fair     Word Length: 4, Frequency : 1
+crystal     Word Length: 7, Frequency : 1
+countries     Word Length: 9, Frequency : 1
+clearer     Word Length: 7, Frequency : 1
 There are 7 of words in small.txt with a length LEQ 2. 

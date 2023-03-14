@@ -95,6 +95,15 @@ int main(void) {
       cin.ignore(123,'\n');
     }
   cout<<endl;
+
+  string TypeOfInputs;
+  cout << "Your choices are: consonants [c] or vowels [v]. Press which ever button youd like to gets stats for" << endl;
+  cin >> TypeOfInputs;
+  while (TypeOfInputs != "c" && TypeOfInputs != "v") {
+    cout << "Please try again" << endl;
+    cin.clear();
+    cin >> TypeOfInputs;
+  }
   
 
   cout<<"Please go to statistics.txt to see your custom data!"<<endl;
@@ -142,6 +151,7 @@ int main(void) {
 
 
 // gets every word from file, and if its a vowel (already been converted to lower case) its checked to see if its already in the set of collected vowels. If not, it is added to the set. If it is already present, a new wordinfo is created with an incremented count and put into the set, old one is deleted.
+if (TypeOfInputs == "v") {
   for (auto w : allWordsFromFile) {
       char letter = (w[0]);
       switch (letter) {
@@ -166,6 +176,35 @@ int main(void) {
 
 
   }
+} else {
+  for (auto w : allWordsFromFile) {
+      char letter = (w[0]);
+      switch (letter) {
+      case 'a':
+      case 'e':
+      case 'i':
+      case 'o':
+      case 'u': 
+      break;
+      default:
+      {
+        auto post = find(listOfVowelWords.begin(), listOfVowelWords.end(),
+                         WordInfo(w));
+        if (post != listOfVowelWords.end()) {
+          WordInfo *temp = new WordInfo(*post);
+          temp->increase_count();
+          listOfVowelWords.erase(post);
+          listOfVowelWords.insert(*temp);
+        } else {
+          WordInfo *temp = new WordInfo(w);
+          listOfVowelWords.insert(*temp);
+        }
+      }; break;
+      }
+
+
+  }
+}
 
 cout<<"Number of words in "<<input<<" : "<<allWordsFromFile.size()<<endl; 
   int counttemp = 0;
@@ -173,7 +212,13 @@ cout<<"Number of words in "<<input<<" : "<<allWordsFromFile.size()<<endl;
 
     counttemp = counttemp + w.get_count();
   }
-  cout << "Number of words in "<<input<<" : "<<"starting with vowel: "
+  string typeOfInput;
+  if (TypeOfInputs == "c") {
+    typeOfInput = "consanants";
+  } else {
+     typeOfInput = "vowels";
+  }
+  cout << "Number of words in "<<input<<" : "<<"starting with " << typeOfInput << " "
        << counttemp << endl;
 
     vector<WordInfo> listofSortedVowelsByCount;  
