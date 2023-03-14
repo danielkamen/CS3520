@@ -106,39 +106,42 @@ int main(void) {
     string token;
     // loops through each word/token
     while (lineStream >> token) {
-      char letter = (token[0]);
+      for (int j = 0; j < token.length(); ++j) {
+                    token[j] = tolower(token[j]);
+                }
+      allWordsFromFile.push_back(token);
+    }
+  }
+
+  
+
+
+  for (auto w : allWordsFromFile) {
+     char letter = (w[0]);
       switch (letter) {
       case 'a':
-      case 'A':
       case 'e':
-      case 'E':
       case 'i':
-      case 'I':
       case 'o':
-      case 'O':
-      case 'u':
-      case 'U':
-        { auto post = find(listOfVowelWords.begin(), listOfVowelWords.end(),
-                         WordInfo(token));
+      case 'u': {
+        auto post = find(listOfVowelWords.begin(), listOfVowelWords.end(),
+                         WordInfo(w));
         if (post != listOfVowelWords.end()) {
           WordInfo *temp = new WordInfo(*post);
           temp->increase_count();
           listOfVowelWords.erase(post);
           listOfVowelWords.insert(*temp);
         } else {
-          WordInfo *temp = new WordInfo(token);
+          WordInfo *temp = new WordInfo(w);
           listOfVowelWords.insert(*temp);
         }
-        break;
-          }
-      default:
-        break;
+      } break;
       }
 
-      numOfWords++;
-    }
+
   }
 
+  
   cout << "Number of words in file that are lower case: "
        << listOfVowelWords.size() << endl;
   for (auto w : listOfVowelWords) {
