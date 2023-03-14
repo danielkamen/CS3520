@@ -1,0 +1,11 @@
+Number of words in small.txt : 67
+Number of words in small.txt : starting with vowel: 22
+a     Word Length: 1, Frequency : 8
+of     Word Length: 2, Frequency : 4
+and     Word Length: 3, Frequency : 3
+in     Word Length: 2, Frequency : 2
+on     Word Length: 2, Frequency : 2
+england;     Word Length: 8, Frequency : 1
+ever.     Word Length: 5, Frequency : 1
+it     Word Length: 2, Frequency : 1
+There are 7 of words in small.txt with a length LEQ 2. 
