@@ -38,7 +38,7 @@ public:
          << ", Frequency : " << (*this).get_count() << endl;
   }
   // overloads == to only compare words
-  bool operator(const WordInfo &other) const {
+  bool operator==(const WordInfo &other) const {
     return this->word == other.word;
   }
 
