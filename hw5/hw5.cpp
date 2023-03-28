@@ -1,12 +1,12 @@
 #include "simulation.hpp"
 #include "simulationWindow.hpp"
-
+#include "bug.hpp"
 #include <string>
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>
-#include <ncurses.h>
 #include <vector>
+#include <ncurses.h>
 
 using namespace std;
 
@@ -16,12 +16,12 @@ int inputValidation(int minSize);
 int x_max, y_max;
 
 int main(void){
-    printf("thuoeou");
+    printf("began");
       vector<int> nums = ready();
    if (nums.size() == 4) {
     game(nums.get(0), nums.get(1), nums.get(2), nums.get(3));
    }
-    printf("tuenao");
+    printf("ended");
     return(0);
 }
  
