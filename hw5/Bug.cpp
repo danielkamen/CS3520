@@ -23,6 +23,14 @@ void Bug::draw_Bug(Bug* bug)
     mvprintw(bug->getY(), bug->getX(), "%c", bug->getSymbol());
 }
 
+
+void Bug::display_bug_info(int count, int x, int y, Bug* bug) {
+     mvprintw(x, y,
+                 "[%i] Bug: x %i, y %i, it %i, s %c ", count, bug->getX(),
+                 bug->getY(), bug->getInitalizedTime(), bug->getSymbol());
+}
+
+
 void Bug::remove_eaten_bug(vector<Bug*>& bugs, int x, int y) {
  for (auto it = bugs.begin(); it != bugs.end(); ) {
         if ((*it)->getX() == x && (*it)->getY() == y) {
@@ -35,8 +43,8 @@ void Bug::remove_eaten_bug(vector<Bug*>& bugs, int x, int y) {
 }
 
 // used to sort
-bool Bug::operator==(const Bug& other) {
-
+void Bug::operator++(Bug& bug) {
+    ++(bug.it);
 }
 
 // Compare the indexes of the order 
@@ -87,25 +95,25 @@ DoodleBug:: DoodleBug(int x, int y, int it) : Bug(x, y, it) {
 DoodleBug::~DoodleBug() {}
 
 
-
-void DoodleBug::move() {
+//----------------------------------------
+void DoodleBug::move(vector<pair<int, int>> positions) {
     
 }
-
+//----------------------------------------
 bool DoodleBug::starve() const {
     // TODO
     return false;
 }
-
-bool DoodleBug::canMove(vector<Bug*>& bugs, int x, int y) const {
+//----------------------------------------
+vector<pair<int, int>> DoodleBug::canMove(vector<Bug*>& bugs, int x, int y) const {
     // TODO
     return false;
 }
-
+//----------------------------------------
 bool DoodleBug::canBreed() const override {
      return (it > 0 && it % 10 == 0);
 }
-
+//----------------------------------------
 void DoodleBug::breed(vector<Bug*>& bugs) const override {
     // TODO
 }
@@ -125,36 +133,36 @@ Queen::Queen(int x, int y, int lifetime) : Ant(x, y, lifetime) {
     timeSinceMated = 0;
   };
 Queen::~Queen() {}
-
-void Queen::move() {
+//----------------------------------------
+void Queen::move(vector<pair<int, int>> positions) {
     // TODO
 }
-
+//----------------------------------------
 bool Queen::starve() const {
     // TODO
     return false;
 }
-
-bool Queen::canMove(vector<Bug*>& bugs, int x, int y) const {
+//----------------------------------------
+vector<pair<int, int>> Queen::canMove(vector<Bug*>& bugs, int x, int y) const {
     // TODO
     return false;
 }
-
+//----------------------------------------
 bool Queen::canMate() const {
     // TODO
     return false;
 }
-
+//----------------------------------------
 bool Queen::canMove() const {
     // TODO
     return false;
 }
-
+//----------------------------------------
 bool Queen::canBreed() const override {
     // TODO
     return false;
 }
-
+//----------------------------------------
 void Queen::breed(vector<Bug*>& bugs) const override {
     // TODO
 }
@@ -166,27 +174,27 @@ Worker::Worker(int x, int y, int it) : Ant(x, y, it) {
   };
 
 Worker::~Worker() {}
-
-void Worker::move() {
+//----------------------------------------
+void Worker::move(vector<pair<int, int>> positions) {
     // TODO
 }
-
+//----------------------------------------
 bool Worker::starve() const {
     // TODO
     return false;
 }
-
-bool Worker::canMove(vector<Bug*>& bugs, int x, int y) const {
+//----------------------------------------
+vector<pair<int, int>> Worker::canMove(vector<Bug*>& bugs, int x, int y) const {
     // TODO
     return false;
 }
 
-
+//----------------------------------------
 bool Worker::canBreed() const override {
     // TODO
     return false;
 }
-
+//----------------------------------------
 void Worker::breed(vector<Bug*>& bugs) const override {
     // TODO
 }
@@ -194,12 +202,12 @@ void Worker::breed(vector<Bug*>& bugs) const override {
 
 // MaleAnt methods
 MaleAnt::MaleAnt(int x, int y, int it) : Worker(x, y, it) { symbol = 'o'; };
-
+//----------------------------------------
 bool MaleAnt::canBreed() const override {
     // TODO
     return false;
 }
-
+//----------------------------------------
 void MaleAnt::breed(vector<Bug*>& bugs) const override {
     // TODO
 }
