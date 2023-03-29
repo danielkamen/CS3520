@@ -8,5 +8,3 @@ void generate_points(int *bugx, int *bugy, int width, int height, int x_offset, 
 
 enum State{INIT, ALIVE, DEAD, EXIT};
 
-
-void setEndScreen(int timeToEnd);

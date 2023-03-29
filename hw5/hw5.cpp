@@ -1,80 +1,47 @@
+#include "bug.hpp"
 #include "simulation.hpp"
 #include "simulationWindow.hpp"
-#include "bug.hpp"
-#include <string>
-#include <cstring>
-#include <cstdlib>
 #include <cstdio>
-#include <vector>
+#include <cstdlib>
+#include <cstring>
 #include <ncurses.h>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-vector<int> Input();
-int ready();
-int inputValidation(int minSize);
-int x_max, y_max;
+int main(void) {
+  int value;
+  vector<int> nums;
 
-int main(void){
-    printf("began");
-      vector<int> nums = ready();
-   if (nums.size() == 4) {
-    game(nums.get(0), nums.get(1), nums.get(2), nums.get(3));
-   }
-    printf("ended");
-    return(0);
-}
- 
+  cout << "Enter number of doodlebugs, queens, male ants, and workers (in that "
+          "order) by entering a number, then enter, then again: "
+       << endl;
 
-
-  // print start menu
-int ready() 
-{
-    setWelcomeScreen();
-	 move(1, 10);
-            printw("Welcome to the simulation!");
-           
-	return Input();
-}
-
-
-
-// sets welcome screen
-void setWelcomeScreen()
-{
-	initscr(); 
-	noecho();
-	getmaxyx(stdscr, y_max, x_max);
-	
-}
-
-
-// gets the users input
-vector<int> Input()
-{
-    vector<int> nums;
-	nums.push_back(inputValidation(1, "Enter number of doodlebugs: "));
-   nums.push_back(inputValidation(1,  "Enter number of queens: "));
-    nums.push_back(inputValidation(1,  "Enter number of male ants: "));
-   nums.push_back(inputValidation(0,  "Enter number of worker ants: "));
-	refresh();
-	endwin();
-	clear();
-	return nums;	
-}
-
-
-// input validation
-int inputValidation(int minSize, string message) {
-    cout<<message<<endl;
-    int value;
-    // input validation
-    while (!(cin>>value) || value < minSize) {
-      cout<<"Try again, not a number or less than" + " " + minSize "."<<endl;
+  for (int i = 0; i < 4; i++) {
+    while (!(cin >> value) || value < 0) {
+      cout << "Try again, not a number or less than 0" << endl;
       cin.clear();
-      cin.ignore(123,'\n');
+      cin.ignore(123, '\n');
     }
 
-    return value;
-}
+    nums.push_back(value);
+  }
+  while (nums.at(0) + nums.at(1) + nums.at(2) +nums.at(3) > 1500) {
+    cout<<"You gave too many bugs. try again"<<endl;
+    nums.clear();
+      for (int i = 0; i < 4; i++) {
+    while (!(cin >> value) || value < 0) {
+      cout << "Try again, not a number or less than 0" << endl;
+      cin.clear();
+      cin.ignore(123, '\n');
+    }
 
+    nums.push_back(value);
+  }
+  }
+
+  game(nums.at(0), nums.at(1), nums.at(2), nums.at(3));
+
+  return (0);
+}
