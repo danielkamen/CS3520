@@ -1,0 +1,11 @@
+The MyString class uses unique_ptr to handle the memory allocated for its member variable. 
+
+The constructors properly initialize and allocate memory. 
+
+The copy constructor makes a new memory allocation and copies the data from the source object.
+
+The move constructor passes the memory ownership to the new object and ensures that the original object's data is cleaned up.
+
+The destructor doesn't need to delete the memory because the unique_ptr does it when the object goes out of scope.
+
+Using unique_ptr to handle the MyString objects in main ensures the allocated memory is cleaned up, making the code exception-safe and following RAII principles.
