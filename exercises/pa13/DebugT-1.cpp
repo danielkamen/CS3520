@@ -4,6 +4,13 @@
 // logical errors and rectify them Re-factor the code by adding few comments
 // (make it readable) and provide list of most important fixes (in comments)
 
+/*
+Important fixes:
+1. added getters for private feild calls
+2. changed field name the  setValues method, which was the same as Person age feild. It set itself to itself, producing 0 every time.
+I could also keep int age as a feild and instead declare Person::age = age; inside the method.
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
