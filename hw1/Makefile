@@ -40,7 +40,7 @@ clean:
 	rm -f file1
 	rm -f file2
 	rm -f file3
-	rm -f fig05_05
+	rm -f fig05_06
 	rm -f find_and_replace
 	rm -f stats_from_paragraph
 	rm -f *.o
